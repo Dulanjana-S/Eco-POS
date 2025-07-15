@@ -1,6 +1,7 @@
 
 using Microsoft.Data.SqlClient;
 
+
 namespace Eco_Grocery_Mart
 
 {
@@ -37,39 +38,38 @@ namespace Eco_Grocery_Mart
         }
 
         private void button1_Click(object sender, EventArgs e)
-       /* {
+        
+             {
+                 string username = textBox1.Text;
+                 string password = textBox2.Text;
+
+            SqlConnection con = DB.GetConnection();
             
-            string username = txtUsername.Text;
-            string password = txtPassword.Text;
-
-            using (SqlConnection conn = DB.GetConnection())
             {
-                string sql = "SELECT COUNT(*) FROM Users WHERE Username = @username AND Password = @password";
-                SqlCommand cmd = new SqlCommand(sql, conn);
-                cmd.Parameters.AddWithValue("@username", username);
-                cmd.Parameters.AddWithValue("@password", password);
+        con.Open();
+        SqlCommand cmd = new SqlCommand("SELECT COUNT(*) FROM Users WHERE Username = admin AND Password = 1234", con);
+        cmd.Parameters.AddWithValue("admin", username);
+        cmd.Parameters.AddWithValue("1234", password);
+        int count = (int)cmd.ExecuteScalar();
 
-                conn.Open();
-                int userCount = (int)cmd.ExecuteScalar();
-                conn.Close();
-
-                if (userCount > 0)
-                {
-                    MessageBox.Show("Login Successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                    this.Hide(); // hide login form
-                    new Login().Show(); // replace with your actual main form name
-                }
-
-                else
-                {
-                    MessageBox.Show("Invalid username or password", "Login Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
-        }
-       */
-   
+        if (count > 0)
         {
+            // Login success
+            MessageBox.Show("Login Successful!");
+
+            Dashboard dashboard = new Dashboard();
+            this.Hide(); // Hide login
+            dashboard.Show(); // Show dashboard
+        }
+        else
+        {
+            MessageBox.Show("Invalid username or password.");
+                     }
+                 }
+             }
+       
+
+        /*{
             string username = textBox1.Text;
             string password = textBox2.Text;
 
@@ -86,9 +86,9 @@ namespace Eco_Grocery_Mart
             {
                 MessageBox.Show("Invalid login credentials.");
             }
-        }
+        }*/
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
+private void textBox1_TextChanged(object sender, EventArgs e)
         {
 
         }

@@ -16,5 +16,10 @@ namespace Eco_Grocery_Mart
         {
             InitializeComponent();
         }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

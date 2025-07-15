@@ -31,5 +31,10 @@ namespace Eco_Grocery_Mart
         {
 
         }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

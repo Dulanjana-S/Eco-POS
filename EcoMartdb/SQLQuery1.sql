@@ -4,6 +4,9 @@ CREATE TABLE Users (
     Username NVARCHAR(50),
     Password NVARCHAR(50),
     --Role NVARCHAR(20) -- Admin or Cashier
+    -- Sample Admin User
+
+
 );
 
 -- Products table

@@ -43,7 +43,7 @@
             button1.Name = "button1";
             button1.Size = new Size(151, 65);
             button1.TabIndex = 0;
-            button1.Text = "Product Manager ";
+            button1.Text = "Product Manage ";
             button1.UseVisualStyleBackColor = true;
             button1.Click += button1_Click;
             // 
@@ -56,6 +56,7 @@
             button2.TabIndex = 1;
             button2.Text = "Sales / Billing";
             button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
             // 
             // button3
             // 
@@ -66,6 +67,7 @@
             button3.TabIndex = 2;
             button3.Text = "Sales History ";
             button3.UseVisualStyleBackColor = true;
+            button3.Click += button3_Click;
             // 
             // button4
             // 

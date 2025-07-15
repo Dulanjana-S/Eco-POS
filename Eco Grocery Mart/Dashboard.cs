@@ -25,10 +25,14 @@ namespace Eco_Grocery_Mart
             btnProductManagement.Visible = false;
             btnInventoryReport.Visible = false; 
         } */
-        
+
         private void button4_Click(object sender, EventArgs e)
         {
 
+            this.Hide();
+            Dashboard login = new Dashboard();
+            login.Show();
+            
         }
 
         private void Dashboard_Load(object sender, EventArgs e)
@@ -43,7 +47,20 @@ namespace Eco_Grocery_Mart
 
         private void button1_Click(object sender, EventArgs e)
         {
+            Dashboard productForm = new Dashboard();
+            productForm.Show();
+        }
 
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Product_Manager products = new Product_Manager();
+            products.Show();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            SalesHistory history = new SalesHistory();
+            history.Show();
         }
     }
 }
