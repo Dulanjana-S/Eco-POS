@@ -96,9 +96,9 @@
             // 
             button1.BackColor = Color.DeepSkyBlue;
             button1.Font = new Font("Arial Rounded MT Bold", 9.969231F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button1.Location = new Point(464, 136);
+            button1.Location = new Point(440, 136);
             button1.Name = "button1";
-            button1.Size = new Size(102, 31);
+            button1.Size = new Size(93, 29);
             button1.TabIndex = 6;
             button1.Text = "Search";
             button1.UseVisualStyleBackColor = false;
@@ -107,7 +107,7 @@
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Arial Rounded MT Bold", 11.0769234F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label4.Location = new Point(36, 192);
+            label4.Location = new Point(36, 201);
             label4.Name = "label4";
             label4.Size = new Size(138, 23);
             label4.TabIndex = 7;
@@ -128,10 +128,10 @@
             dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Columns.AddRange(new DataGridViewColumn[] { Column1, Column2, Column3, Column4 });
-            dataGridView1.Location = new Point(36, 228);
+            dataGridView1.Location = new Point(36, 239);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 56;
-            dataGridView1.Size = new Size(598, 272);
+            dataGridView1.Size = new Size(597, 272);
             dataGridView1.TabIndex = 8;
             // 
             // Column1
@@ -166,18 +166,19 @@
             // 
             button2.BackColor = Color.DeepSkyBlue;
             button2.Font = new Font("Arial Rounded MT Bold", 9.969231F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button2.Location = new Point(649, 469);
+            button2.Location = new Point(484, 517);
             button2.Name = "button2";
-            button2.Size = new Size(139, 31);
+            button2.Size = new Size(149, 34);
             button2.TabIndex = 9;
             button2.Text = "Back to Sales";
             button2.UseVisualStyleBackColor = false;
+            button2.Click += button2_Click;
             // 
             // SalesHistory
             // 
             AutoScaleDimensions = new SizeF(9F, 21F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 519);
+            ClientSize = new Size(666, 564);
             Controls.Add(button2);
             Controls.Add(dataGridView1);
             Controls.Add(label4);

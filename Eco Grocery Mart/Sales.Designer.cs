@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             label1 = new Label();
             label2 = new Label();
             label3 = new Label();
@@ -47,6 +47,8 @@
             Column3 = new DataGridViewTextBoxColumn();
             Column4 = new DataGridViewTextBoxColumn();
             Column5 = new DataGridViewTextBoxColumn();
+            dateTimePicker1 = new DateTimePicker();
+            label6 = new Label();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
@@ -65,7 +67,7 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI Semibold", 12.1846151F, FontStyle.Bold);
-            label2.Location = new Point(51, 75);
+            label2.Location = new Point(42, 77);
             label2.Name = "label2";
             label2.Size = new Size(96, 30);
             label2.TabIndex = 1;
@@ -75,7 +77,7 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI Semibold", 12.1846151F, FontStyle.Bold);
-            label3.Location = new Point(51, 133);
+            label3.Location = new Point(42, 135);
             label3.Name = "label3";
             label3.Size = new Size(67, 30);
             label3.TabIndex = 2;
@@ -102,7 +104,7 @@
             // textBox1
             // 
             textBox1.BorderStyle = BorderStyle.FixedSingle;
-            textBox1.Location = new Point(153, 134);
+            textBox1.Location = new Point(153, 135);
             textBox1.Name = "textBox1";
             textBox1.Size = new Size(190, 29);
             textBox1.TabIndex = 5;
@@ -119,9 +121,9 @@
             // 
             button1.BackColor = Color.DeepSkyBlue;
             button1.Font = new Font("Arial Rounded MT Bold", 12.1846151F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button1.Location = new Point(239, 196);
+            button1.Location = new Point(470, 185);
             button1.Name = "button1";
-            button1.Size = new Size(318, 47);
+            button1.Size = new Size(273, 47);
             button1.TabIndex = 7;
             button1.Text = "+ Add to Cart";
             button1.UseVisualStyleBackColor = false;
@@ -168,8 +170,8 @@
             // 
             // dataGridView1
             // 
-            dataGridViewCellStyle3.Font = new Font("Arial Rounded MT Bold", 8.861538F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Font = new Font("Arial Rounded MT Bold", 8.861538F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             dataGridView1.BackgroundColor = SystemColors.Window;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Columns.AddRange(new DataGridViewColumn[] { Column1, Column2, Column3, Column4, Column5 });
@@ -214,11 +216,30 @@
             Column5.Name = "Column5";
             Column5.Width = 135;
             // 
+            // dateTimePicker1
+            // 
+            dateTimePicker1.Location = new Point(153, 192);
+            dateTimePicker1.Name = "dateTimePicker1";
+            dateTimePicker1.Size = new Size(265, 29);
+            dateTimePicker1.TabIndex = 26;
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Font = new Font("Segoe UI Semibold", 12.1846151F, FontStyle.Bold);
+            label6.Location = new Point(42, 192);
+            label6.Name = "label6";
+            label6.Size = new Size(107, 30);
+            label6.TabIndex = 27;
+            label6.Text = "Sale Date";
+            // 
             // Sales
             // 
             AutoScaleDimensions = new SizeF(9F, 21F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(803, 595);
+            Controls.Add(label6);
+            Controls.Add(dateTimePicker1);
             Controls.Add(dataGridView1);
             Controls.Add(button3);
             Controls.Add(button2);
@@ -259,5 +280,7 @@
         private DataGridViewTextBoxColumn Column3;
         private DataGridViewTextBoxColumn Column4;
         private DataGridViewTextBoxColumn Column5;
+        private DateTimePicker dateTimePicker1;
+        private Label label6;
     }
 }

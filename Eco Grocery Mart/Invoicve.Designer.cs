@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle9 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle10 = new DataGridViewCellStyle();
             label1 = new Label();
             label2 = new Label();
             label3 = new Label();
@@ -41,6 +41,7 @@
             dataGridView1 = new DataGridView();
             Column1 = new DataGridViewTextBoxColumn();
             Column2 = new DataGridViewTextBoxColumn();
+            label4 = new Label();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
@@ -92,11 +93,12 @@
             // label7
             // 
             label7.AutoSize = true;
-            label7.Location = new Point(15, 432);
+            label7.Location = new Point(99, 419);
             label7.Name = "label7";
             label7.Size = new Size(175, 21);
             label7.TabIndex = 7;
             label7.Text = "Thankyou Come Again.!";
+            label7.Click += label7_Click;
             // 
             // label8
             // 
@@ -110,7 +112,7 @@
             // label9
             // 
             label9.AutoSize = true;
-            label9.Location = new Point(15, 398);
+            label9.Location = new Point(21, 398);
             label9.Name = "label9";
             label9.Size = new Size(334, 21);
             label9.TabIndex = 9;
@@ -122,9 +124,9 @@
             dataGridView1.AllowUserToAddRows = false;
             dataGridView1.AllowUserToDeleteRows = false;
             dataGridView1.AllowUserToOrderColumns = true;
-            dataGridViewCellStyle5.BackColor = SystemColors.Control;
-            dataGridViewCellStyle5.Font = new Font("Arial Rounded MT Bold", 7.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle9.BackColor = SystemColors.Control;
+            dataGridViewCellStyle9.Font = new Font("Arial Rounded MT Bold", 7.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle9;
             dataGridView1.BackgroundColor = SystemColors.Control;
             dataGridView1.ColumnHeadersHeight = 31;
             dataGridView1.Columns.AddRange(new DataGridViewColumn[] { Column1, Column2 });
@@ -133,8 +135,8 @@
             dataGridView1.Name = "dataGridView1";
             dataGridView1.ReadOnly = true;
             dataGridView1.RowHeadersWidth = 56;
-            dataGridViewCellStyle6.BackColor = Color.White;
-            dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle10.BackColor = Color.White;
+            dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle10;
             dataGridView1.Size = new Size(325, 203);
             dataGridView1.TabIndex = 0;
             dataGridView1.CellContentClick += dataGridView1_CellContentClick;
@@ -156,11 +158,21 @@
             Column2.ReadOnly = true;
             Column2.Width = 135;
             // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Location = new Point(21, 440);
+            label4.Name = "label4";
+            label4.Size = new Size(334, 21);
+            label4.TabIndex = 10;
+            label4.Text = "------------------------------------------------------";
+            // 
             // Invoicve
             // 
             AutoScaleDimensions = new SizeF(9F, 21F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(362, 488);
+            ClientSize = new Size(362, 468);
+            Controls.Add(label4);
             Controls.Add(dataGridView1);
             Controls.Add(label9);
             Controls.Add(label8);
@@ -190,5 +202,6 @@
         private DataGridView dataGridView1;
         private DataGridViewTextBoxColumn Column1;
         private DataGridViewTextBoxColumn Column2;
+        private Label label4;
     }
 }

@@ -1,6 +1,6 @@
 ﻿namespace Eco_Grocery_Mart
 {
-    partial class Form1
+    partial class Login
     {
         /// <summary>
         ///  Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
             panel1 = new Panel();
             pictureBox1 = new PictureBox();
             label1 = new Label();
@@ -106,6 +106,7 @@
             textBox1.Name = "textBox1";
             textBox1.Size = new Size(226, 29);
             textBox1.TabIndex = 4;
+            textBox1.TextChanged += textBox1_TextChanged;
             // 
             // textBox2
             // 
@@ -138,8 +139,9 @@
             button1.TabIndex = 7;
             button1.Text = "LOGIN";
             button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
             // 
-            // Form1
+            // Login
             // 
             AutoScaleDimensions = new SizeF(9F, 21F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -153,7 +155,7 @@
             Controls.Add(label2);
             Controls.Add(label1);
             Controls.Add(panel1);
-            Name = "Form1";
+            Name = "Login";
             Text = "Login";
             Load += Form1_Load;
             panel1.ResumeLayout(false);
