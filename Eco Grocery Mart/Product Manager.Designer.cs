@@ -127,7 +127,7 @@
             // 
             // button1
             // 
-            button1.BackColor = Color.LightSkyBlue;
+            button1.BackColor = Color.DeepSkyBlue;
             button1.Font = new Font("Arial Rounded MT Bold", 8.861538F);
             button1.Location = new Point(25, 173);
             button1.Name = "button1";
@@ -138,7 +138,7 @@
             // 
             // button2
             // 
-            button2.BackColor = Color.LightSkyBlue;
+            button2.BackColor = Color.DeepSkyBlue;
             button2.Font = new Font("Arial Rounded MT Bold", 8.861538F);
             button2.Location = new Point(205, 173);
             button2.Name = "button2";
@@ -149,7 +149,7 @@
             // 
             // button3
             // 
-            button3.BackColor = Color.LightSkyBlue;
+            button3.BackColor = Color.DeepSkyBlue;
             button3.Font = new Font("Arial Rounded MT Bold", 8.861538F);
             button3.Location = new Point(382, 173);
             button3.Name = "button3";
@@ -160,7 +160,7 @@
             // 
             // button4
             // 
-            button4.BackColor = Color.LightSkyBlue;
+            button4.BackColor = Color.DeepSkyBlue;
             button4.Font = new Font("Arial Rounded MT Bold", 8.861538F);
             button4.Location = new Point(569, 173);
             button4.Name = "button4";
