@@ -12,11 +12,20 @@ namespace Eco_Grocery_Mart
 {
     public partial class Dashboard : Form
     {
-        public Dashboard()
+        /* public MainForm(string username, string role)
         {
             InitializeComponent();
-        }
-
+            currentUser = username;
+            currentRole = role;
+            lblWelcome.Text = $"Welcome {currentUser} ({currentRole}) to Lak Grocery Mart!";
+      
+        // Optionally: show/hide buttons based on role
+        if (currentRole == "Cashier")
+        {
+            btnProductManagement.Visible = false;
+            btnInventoryReport.Visible = false; 
+        } */
+        
         private void button4_Click(object sender, EventArgs e)
         {
 
@@ -28,6 +37,11 @@ namespace Eco_Grocery_Mart
         }
 
         private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
         {
 
         }

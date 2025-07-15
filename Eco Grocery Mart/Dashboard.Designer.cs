@@ -45,6 +45,7 @@
             button1.TabIndex = 0;
             button1.Text = "Product Manager ";
             button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
             // 
             // button2
             // 
@@ -85,7 +86,7 @@
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI Semibold", 13.8461533F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
             label1.ForeColor = SystemColors.ControlText;
-            label1.Location = new Point(210, 39);
+            label1.Location = new Point(210, 28);
             label1.Name = "label1";
             label1.Size = new Size(598, 105);
             label1.TabIndex = 4;
