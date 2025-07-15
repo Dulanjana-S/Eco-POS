@@ -38,7 +38,7 @@
             // 
             // button1
             // 
-            button1.Font = new Font("Segoe UI", 8.861538F, FontStyle.Bold);
+            button1.Font = new Font("Arial Rounded MT Bold", 8.861538F);
             button1.Location = new Point(12, 28);
             button1.Name = "button1";
             button1.Size = new Size(151, 65);
@@ -49,7 +49,7 @@
             // 
             // button2
             // 
-            button2.Font = new Font("Segoe UI", 8.861538F, FontStyle.Bold);
+            button2.Font = new Font("Arial Rounded MT Bold", 8.861538F);
             button2.Location = new Point(12, 109);
             button2.Name = "button2";
             button2.Size = new Size(151, 65);
@@ -59,7 +59,7 @@
             // 
             // button3
             // 
-            button3.Font = new Font("Segoe UI", 8.861538F, FontStyle.Bold);
+            button3.Font = new Font("Arial Rounded MT Bold", 8.861538F);
             button3.Location = new Point(12, 191);
             button3.Name = "button3";
             button3.Size = new Size(151, 65);
@@ -69,7 +69,7 @@
             // 
             // button4
             // 
-            button4.Font = new Font("Segoe UI", 8.861538F, FontStyle.Bold);
+            button4.Font = new Font("Arial Rounded MT Bold", 8.861538F);
             button4.Image = (Image)resources.GetObject("button4.Image");
             button4.ImageAlign = ContentAlignment.MiddleRight;
             button4.Location = new Point(12, 391);

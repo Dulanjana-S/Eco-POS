@@ -128,7 +128,7 @@
             // button1
             // 
             button1.BackColor = Color.LightSkyBlue;
-            button1.Font = new Font("Segoe UI Semibold", 8.861538F, FontStyle.Bold);
+            button1.Font = new Font("Arial Rounded MT Bold", 8.861538F);
             button1.Location = new Point(25, 173);
             button1.Name = "button1";
             button1.Size = new Size(128, 35);
@@ -139,7 +139,7 @@
             // button2
             // 
             button2.BackColor = Color.LightSkyBlue;
-            button2.Font = new Font("Segoe UI Semibold", 8.861538F, FontStyle.Bold);
+            button2.Font = new Font("Arial Rounded MT Bold", 8.861538F);
             button2.Location = new Point(205, 173);
             button2.Name = "button2";
             button2.Size = new Size(128, 35);
@@ -150,7 +150,7 @@
             // button3
             // 
             button3.BackColor = Color.LightSkyBlue;
-            button3.Font = new Font("Segoe UI Semibold", 8.861538F, FontStyle.Bold);
+            button3.Font = new Font("Arial Rounded MT Bold", 8.861538F);
             button3.Location = new Point(382, 173);
             button3.Name = "button3";
             button3.Size = new Size(128, 35);
@@ -161,7 +161,7 @@
             // button4
             // 
             button4.BackColor = Color.LightSkyBlue;
-            button4.Font = new Font("Segoe UI Semibold", 8.861538F, FontStyle.Bold);
+            button4.Font = new Font("Arial Rounded MT Bold", 8.861538F);
             button4.Location = new Point(569, 173);
             button4.Name = "button4";
             button4.Size = new Size(128, 35);
@@ -247,10 +247,10 @@
             // label7
             // 
             label7.AutoSize = true;
-            label7.Font = new Font("Arial", 11.0769234F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label7.Font = new Font("Arial Rounded MT Bold", 11.0769234F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label7.Location = new Point(257, 9);
             label7.Name = "label7";
-            label7.Size = new Size(212, 24);
+            label7.Size = new Size(220, 23);
             label7.TabIndex = 20;
             label7.Text = "Product Management";
             // 
