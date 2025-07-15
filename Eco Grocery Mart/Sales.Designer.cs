@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             label1 = new Label();
             label2 = new Label();
             label3 = new Label();
@@ -37,15 +38,15 @@
             textBox2 = new TextBox();
             button1 = new Button();
             dataGridView1 = new DataGridView();
+            label5 = new Label();
+            textBox3 = new TextBox();
+            button2 = new Button();
+            button3 = new Button();
             Column1 = new DataGridViewTextBoxColumn();
             Column2 = new DataGridViewTextBoxColumn();
             Column3 = new DataGridViewTextBoxColumn();
             Column4 = new DataGridViewTextBoxColumn();
             Column5 = new DataGridViewTextBoxColumn();
-            label5 = new Label();
-            textBox3 = new TextBox();
-            button2 = new Button();
-            button3 = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
@@ -128,48 +129,21 @@
             // dataGridView1
             // 
             dataGridView1.BackgroundColor = Color.White;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = SystemColors.Control;
+            dataGridViewCellStyle1.Font = new Font("Arial Rounded MT Bold", 8.861538F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle1.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Columns.AddRange(new DataGridViewColumn[] { Column1, Column2, Column3, Column4, Column5 });
-            dataGridView1.Location = new Point(71, 261);
+            dataGridView1.Location = new Point(71, 264);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 56;
             dataGridView1.Size = new Size(672, 199);
             dataGridView1.TabIndex = 20;
-            // 
-            // Column1
-            // 
-            Column1.HeaderText = "ID";
-            Column1.MinimumWidth = 7;
-            Column1.Name = "Column1";
-            Column1.Width = 135;
-            // 
-            // Column2
-            // 
-            Column2.HeaderText = "Name";
-            Column2.MinimumWidth = 7;
-            Column2.Name = "Column2";
-            Column2.Width = 135;
-            // 
-            // Column3
-            // 
-            Column3.HeaderText = "Category";
-            Column3.MinimumWidth = 7;
-            Column3.Name = "Column3";
-            Column3.Width = 135;
-            // 
-            // Column4
-            // 
-            Column4.HeaderText = "Price";
-            Column4.MinimumWidth = 7;
-            Column4.Name = "Column4";
-            Column4.Width = 135;
-            // 
-            // Column5
-            // 
-            Column5.HeaderText = "Qty";
-            Column5.MinimumWidth = 7;
-            Column5.Name = "Column5";
-            Column5.Width = 135;
             // 
             // label5
             // 
@@ -211,6 +185,41 @@
             button3.Text = "Clear Cart";
             button3.UseVisualStyleBackColor = true;
             // 
+            // Column1
+            // 
+            Column1.HeaderText = "ID";
+            Column1.MinimumWidth = 7;
+            Column1.Name = "Column1";
+            Column1.Width = 135;
+            // 
+            // Column2
+            // 
+            Column2.HeaderText = "Product";
+            Column2.MinimumWidth = 7;
+            Column2.Name = "Column2";
+            Column2.Width = 135;
+            // 
+            // Column3
+            // 
+            Column3.HeaderText = "Price";
+            Column3.MinimumWidth = 7;
+            Column3.Name = "Column3";
+            Column3.Width = 135;
+            // 
+            // Column4
+            // 
+            Column4.HeaderText = "Qty";
+            Column4.MinimumWidth = 7;
+            Column4.Name = "Column4";
+            Column4.Width = 135;
+            // 
+            // Column5
+            // 
+            Column5.HeaderText = "Total";
+            Column5.MinimumWidth = 7;
+            Column5.Name = "Column5";
+            Column5.Width = 135;
+            // 
             // Sales
             // 
             AutoScaleDimensions = new SizeF(9F, 21F);
@@ -247,14 +256,14 @@
         private TextBox textBox2;
         private Button button1;
         private DataGridView dataGridView1;
+        private Label label5;
+        private TextBox textBox3;
+        private Button button2;
+        private Button button3;
         private DataGridViewTextBoxColumn Column1;
         private DataGridViewTextBoxColumn Column2;
         private DataGridViewTextBoxColumn Column3;
         private DataGridViewTextBoxColumn Column4;
         private DataGridViewTextBoxColumn Column5;
-        private Label label5;
-        private TextBox textBox3;
-        private Button button2;
-        private Button button3;
     }
 }
