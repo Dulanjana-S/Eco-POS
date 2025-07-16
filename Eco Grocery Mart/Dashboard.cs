@@ -51,8 +51,9 @@ namespace Eco_Grocery_Mart
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Product_Manager productForm = new Product_Manager();
-            productForm.Show();
+            Product_Manager products = new Product_Manager();
+             products.Show();
+           
         }
 
         private void button2_Click(object sender, EventArgs e)

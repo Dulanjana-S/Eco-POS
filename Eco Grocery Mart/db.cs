@@ -41,13 +41,17 @@ public class DB
 {
     public class DatabaseConnection
     {
+        
 
         public static string connectionString =
         "Server=DESKTOP-O3R14AN\\SQLEXPRESS;Database=EcoMartDB;User Id=admin;Password=1234;";
+      //  private static readonly string connectionString =  = connectionString = "Data Source=DESKTOP-O3R14AN\\SQLEXPRESS;Initial Catalog=EcoMart_POS;Integrated Security=True";
 
         //  "Server=DESKTOP-O3R14AN\\SQLEXPRESS;Database=EcoMart_POS;User Id=admin;Password=1234; TrustServerCertificate=True;";
 
         public static SqlConnection GetConnection()
+         
+
         {
             return new SqlConnection(connectionString);
         }

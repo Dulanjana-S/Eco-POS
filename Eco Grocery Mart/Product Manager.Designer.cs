@@ -42,11 +42,6 @@
             label6 = new Label();
             textBox5 = new TextBox();
             dataGridView1 = new DataGridView();
-            Column1 = new DataGridViewTextBoxColumn();
-            Column2 = new DataGridViewTextBoxColumn();
-            Column3 = new DataGridViewTextBoxColumn();
-            Column4 = new DataGridViewTextBoxColumn();
-            Column5 = new DataGridViewTextBoxColumn();
             label7 = new Label();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
@@ -60,6 +55,7 @@
             label1.Size = new Size(53, 21);
             label1.TabIndex = 0;
             label1.Text = "Name";
+            label1.Click += label1_Click_1;
             // 
             // label3
             // 
@@ -116,6 +112,7 @@
             button1.TabIndex = 12;
             button1.Text = "Add";
             button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click_1;
             // 
             // button2
             // 
@@ -127,17 +124,19 @@
             button2.TabIndex = 13;
             button2.Text = "Update";
             button2.UseVisualStyleBackColor = false;
+            button2.Click += button2_Click;
             // 
             // button3
             // 
             button3.BackColor = Color.DeepSkyBlue;
             button3.Font = new Font("Arial Rounded MT Bold", 8.861538F);
-            button3.Location = new Point(382, 173);
+            button3.Location = new Point(388, 173);
             button3.Name = "button3";
             button3.Size = new Size(128, 35);
             button3.TabIndex = 14;
             button3.Text = "Delete";
             button3.UseVisualStyleBackColor = false;
+            button3.Click += button3_Click;
             // 
             // button4
             // 
@@ -149,6 +148,7 @@
             button4.TabIndex = 15;
             button4.Text = "Clear";
             button4.UseVisualStyleBackColor = false;
+            button4.Click += button4_Click;
             // 
             // label5
             // 
@@ -178,53 +178,18 @@
             textBox5.Name = "textBox5";
             textBox5.Size = new Size(231, 29);
             textBox5.TabIndex = 18;
+            textBox5.TextChanged += textBox5_TextChanged;
             // 
             // dataGridView1
             // 
             dataGridView1.BackgroundColor = Color.White;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { Column1, Column2, Column3, Column4, Column5 });
             dataGridView1.Location = new Point(25, 296);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 56;
             dataGridView1.Size = new Size(672, 227);
             dataGridView1.TabIndex = 19;
             dataGridView1.CellContentClick += dataGridView1_CellContentClick;
-            // 
-            // Column1
-            // 
-            Column1.HeaderText = "ID";
-            Column1.MinimumWidth = 7;
-            Column1.Name = "Column1";
-            Column1.Width = 135;
-            // 
-            // Column2
-            // 
-            Column2.HeaderText = "Name";
-            Column2.MinimumWidth = 7;
-            Column2.Name = "Column2";
-            Column2.Width = 135;
-            // 
-            // Column3
-            // 
-            Column3.HeaderText = "Category";
-            Column3.MinimumWidth = 7;
-            Column3.Name = "Column3";
-            Column3.Width = 135;
-            // 
-            // Column4
-            // 
-            Column4.HeaderText = "Price";
-            Column4.MinimumWidth = 7;
-            Column4.Name = "Column4";
-            Column4.Width = 135;
-            // 
-            // Column5
-            // 
-            Column5.HeaderText = "Qty";
-            Column5.MinimumWidth = 7;
-            Column5.Name = "Column5";
-            Column5.Width = 135;
             // 
             // label7
             // 
@@ -281,11 +246,7 @@
         private Label label6;
         private TextBox textBox5;
         private DataGridView dataGridView1;
-        private DataGridViewTextBoxColumn Column1;
-        private DataGridViewTextBoxColumn Column2;
-        private DataGridViewTextBoxColumn Column3;
-        private DataGridViewTextBoxColumn Column4;
-        private DataGridViewTextBoxColumn Column5;
         private Label label7;
     }
 }
+  
