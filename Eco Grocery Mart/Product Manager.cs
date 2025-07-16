@@ -35,22 +35,7 @@ namespace Eco_Grocery_Mart
         // string connectionString = "Server=DESKTOP-O3R14AN\\SQLEXPRESS;Database==EcoMart_POS;User Id=admin;Password=1234;Encrypt=True;TrustServerCertificate=True;";
 
 
-        /* private void LoadProducts()
-         {
-             SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM Products", con);
-             DataTable dt = new DataTable();
-             da.Fill(dt);
-             dataGridView1.DataSource = dt;
-         }
-
-         private void ClearFields()
-         {
-             textBox1.Text = ""; // Product Name
-             textBox3.Text = ""; // Price
-             textBox4.Text = ""; // Quantity
-                                 // You can also reset dropdowns or categories if needed
-         }
-        */
+        
 
         private void label5_Click(object sender, EventArgs e)
         {
@@ -84,14 +69,7 @@ namespace Eco_Grocery_Mart
             }
         }
 
-        /*
-          { //Load Products Into DataGridView
-
-         SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM Products", con);
-         DataTable dt = new DataTable();
-         da.Fill(dt);
-         dataGridView1.DataSource = dt;
-         }*/
+       
         private void LoadProducts()
         {
             using (SqlConnection con = new SqlConnection(connectionString))
@@ -134,9 +112,7 @@ namespace Eco_Grocery_Mart
         {
 
         }
-        //private void btnAdd_Click(object sender, EventArgs e)
-
-
+       
         /*    {
 
                if (textBox1.Text != "" && textBox3.Text != "" && textBox4.Text != "")
