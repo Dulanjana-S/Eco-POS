@@ -12,6 +12,10 @@ namespace Eco_Grocery_Mart
 {
     public partial class Dashboard : Form
     {
+        public Dashboard()
+        {
+            InitializeComponent(); //very important
+        }
         /* public MainForm(string username, string role)
         {
             InitializeComponent();
@@ -47,13 +51,13 @@ namespace Eco_Grocery_Mart
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Dashboard productForm = new Dashboard();
+            Product_Manager productForm = new Product_Manager();
             productForm.Show();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            Product_Manager products = new Product_Manager();
+           Sales products = new Sales();
             products.Show();
         }
 

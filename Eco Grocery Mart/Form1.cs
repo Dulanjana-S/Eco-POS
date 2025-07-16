@@ -1,5 +1,6 @@
 
 using Microsoft.Data.SqlClient;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 
 namespace Eco_Grocery_Mart
@@ -38,38 +39,33 @@ namespace Eco_Grocery_Mart
         }
 
         private void button1_Click(object sender, EventArgs e)
-        
-             {
-                 string username = textBox1.Text;
-                 string password = textBox2.Text;
-
-            SqlConnection con = DB.GetConnection();
-            
+       /* {
+            // Assume SQL connection and credential checking are already implemented
+            if (textBox1.Text != "" && textBox2.Text != "")
             {
-        con.Open();
-        SqlCommand cmd = new SqlCommand("SELECT COUNT(*) FROM Users WHERE Username = admin AND Password = 1234", con);
-        cmd.Parameters.AddWithValue("admin", username);
-        cmd.Parameters.AddWithValue("1234", password);
-        int count = (int)cmd.ExecuteScalar();
+                // Replace this with your own SQL credential check
+                //if (log(textBox1.Text, textBox2.Text))
+                    if (IsLoginValid(admin, 1234)) 
 
-        if (count > 0)
+                {
+                    this.Hide();                // Hide the login form
+                    Dashboard dashboard = new Dashboard(); // Create dashboard form
+                    dashboard.ShowDialog();     // Open dashboard as a modal dialog
+                    this.Close();               // Close login form after dashboard is closed
+                }
+                else
+                {
+                    MessageBox.Show("Invalid username or password.", "Login Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Please enter username and password.", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        } */
+
+
         {
-            // Login success
-            MessageBox.Show("Login Successful!");
-
-            Dashboard dashboard = new Dashboard();
-            this.Hide(); // Hide login
-            dashboard.Show(); // Show dashboard
-        }
-        else
-        {
-            MessageBox.Show("Invalid username or password.");
-                     }
-                 }
-             }
-       
-
-        /*{
             string username = textBox1.Text;
             string password = textBox2.Text;
 
@@ -79,16 +75,22 @@ namespace Eco_Grocery_Mart
             {
                 MessageBox.Show("Login successful!");
                 // Navigate to main form
-                this.Hide();
-                new Login().Show();  // change Form1 to your real main form name
+                /* this.Hide();
+                 new Login().Show();  // change Form1 to your real main form name */
+                
+                this.Hide();                // Hide the login form
+                Dashboard Dashboard = new Dashboard(); // Create dashboard form
+                Dashboard.Show();     // Open dashboard as a modal dialog
+               
             }
             else
             {
                 MessageBox.Show("Invalid login credentials.");
             }
-        }*/
+        }
+        
 
-private void textBox1_TextChanged(object sender, EventArgs e)
+        private void textBox1_TextChanged(object sender, EventArgs e)
         {
 
         }
