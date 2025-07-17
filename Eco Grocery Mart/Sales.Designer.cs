@@ -17,7 +17,7 @@
 
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             label1 = new Label();
             label2 = new Label();
             label3 = new Label();
@@ -30,15 +30,16 @@
             button2 = new Button();
             button3 = new Button();
             dataGridView1 = new DataGridView();
-            dateTimePicker1 = new DateTimePicker();
-            label6 = new Label();
-            label7 = new Label();
-            button4 = new Button();
             ProductID = new DataGridViewTextBoxColumn();
             ProductName = new DataGridViewTextBoxColumn();
             Price = new DataGridViewTextBoxColumn();
             Quantity = new DataGridViewTextBoxColumn();
             Total = new DataGridViewTextBoxColumn();
+            dateTimePicker1 = new DateTimePicker();
+            label6 = new Label();
+            label7 = new Label();
+            button4 = new Button();
+            button5 = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
@@ -125,7 +126,7 @@
             // textBox3
             // 
             textBox3.BorderStyle = BorderStyle.FixedSingle;
-            textBox3.Location = new Point(407, 542);
+            textBox3.Location = new Point(371, 539);
             textBox3.Name = "textBox3";
             textBox3.Size = new Size(190, 29);
             textBox3.TabIndex = 22;
@@ -136,9 +137,9 @@
             button2.BackColor = Color.ForestGreen;
             button2.Font = new Font("Arial Rounded MT Bold", 11.07F);
             button2.ForeColor = SystemColors.ButtonHighlight;
-            button2.Location = new Point(621, 534);
+            button2.Location = new Point(621, 530);
             button2.Name = "button2";
-            button2.Size = new Size(132, 46);
+            button2.Size = new Size(132, 40);
             button2.TabIndex = 23;
             button2.Text = "Checkout";
             button2.UseVisualStyleBackColor = false;
@@ -147,9 +148,9 @@
             // button3
             // 
             button3.Font = new Font("Arial Rounded MT Bold", 8.86F);
-            button3.Location = new Point(32, 541);
+            button3.Location = new Point(32, 535);
             button3.Name = "button3";
-            button3.Size = new Size(119, 27);
+            button3.Size = new Size(119, 33);
             button3.TabIndex = 24;
             button3.Text = "Clear Cart";
             button3.UseVisualStyleBackColor = true;
@@ -157,8 +158,8 @@
             // 
             // dataGridView1
             // 
-            dataGridViewCellStyle1.Font = new Font("Arial Rounded MT Bold", 8.86F);
-            dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Font = new Font("Arial Rounded MT Bold", 8.86F);
+            dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
             dataGridView1.BackgroundColor = SystemColors.Window;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Columns.AddRange(new DataGridViewColumn[] { ProductID, ProductName, Price, Quantity, Total });
@@ -168,46 +169,6 @@
             dataGridView1.Size = new Size(721, 222);
             dataGridView1.TabIndex = 25;
             dataGridView1.CellContentClick += dataGridView1_CellContentClick;
-            // 
-            // dateTimePicker1
-            // 
-            dateTimePicker1.Location = new Point(153, 192);
-            dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(265, 29);
-            dateTimePicker1.TabIndex = 26;
-            dateTimePicker1.ValueChanged += dateTimePicker1_ValueChanged;
-            // 
-            // label6
-            // 
-            label6.AutoSize = true;
-            label6.Font = new Font("Segoe UI Semibold", 12.18F, FontStyle.Bold);
-            label6.Location = new Point(42, 192);
-            label6.Name = "label6";
-            label6.Size = new Size(107, 30);
-            label6.TabIndex = 27;
-            label6.Text = "Sale Date";
-            // 
-            // label7
-            // 
-            label7.AutoSize = true;
-            label7.Font = new Font("Arial Rounded MT Bold", 12.18F);
-            label7.Location = new Point(621, 258);
-            label7.Name = "label7";
-            label7.Size = new Size(124, 26);
-            label7.TabIndex = 28;
-            label7.Text = "Cart Items";
-            // 
-            // button4
-            // 
-            button4.BackColor = Color.Turquoise;
-            button4.Font = new Font("Arial Rounded MT Bold", 11.0769234F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button4.Location = new Point(249, 536);
-            button4.Name = "button4";
-            button4.Size = new Size(152, 44);
-            button4.TabIndex = 29;
-            button4.Text = "Grand Total:";
-            button4.UseVisualStyleBackColor = false;
-            button4.Click += button4_Click_1;
             // 
             // ProductID
             // 
@@ -244,11 +205,62 @@
             Total.Name = "Total";
             Total.Width = 135;
             // 
+            // dateTimePicker1
+            // 
+            dateTimePicker1.Location = new Point(153, 192);
+            dateTimePicker1.Name = "dateTimePicker1";
+            dateTimePicker1.Size = new Size(265, 29);
+            dateTimePicker1.TabIndex = 26;
+            dateTimePicker1.ValueChanged += dateTimePicker1_ValueChanged;
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Font = new Font("Segoe UI Semibold", 12.18F, FontStyle.Bold);
+            label6.Location = new Point(42, 192);
+            label6.Name = "label6";
+            label6.Size = new Size(107, 30);
+            label6.TabIndex = 27;
+            label6.Text = "Sale Date";
+            // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Font = new Font("Arial Rounded MT Bold", 12.18F);
+            label7.Location = new Point(621, 258);
+            label7.Name = "label7";
+            label7.Size = new Size(124, 26);
+            label7.TabIndex = 28;
+            label7.Text = "Cart Items";
+            // 
+            // button4
+            // 
+            button4.BackColor = Color.Turquoise;
+            button4.Font = new Font("Arial Rounded MT Bold", 11.0769234F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            button4.Location = new Point(213, 535);
+            button4.Name = "button4";
+            button4.Size = new Size(152, 35);
+            button4.TabIndex = 29;
+            button4.Text = "Grand Total:";
+            button4.UseVisualStyleBackColor = false;
+            button4.Click += button4_Click_1;
+            // 
+            // button5
+            // 
+            button5.Location = new Point(621, 576);
+            button5.Name = "button5";
+            button5.Size = new Size(132, 34);
+            button5.TabIndex = 30;
+            button5.Text = "Back";
+            button5.UseVisualStyleBackColor = true;
+            button5.Click += button5_Click;
+            // 
             // Sales
             // 
             AutoScaleDimensions = new SizeF(9F, 21F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(783, 595);
+            ClientSize = new Size(783, 613);
+            Controls.Add(button5);
             Controls.Add(button4);
             Controls.Add(label7);
             Controls.Add(label6);
@@ -267,6 +279,7 @@
             Controls.Add(label1);
             Name = "Sales";
             Text = "Sales";
+            Load += Sales_Load_1;
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
             PerformLayout();
@@ -295,5 +308,6 @@
         private DataGridViewTextBoxColumn Price;
         private DataGridViewTextBoxColumn Quantity;
         private DataGridViewTextBoxColumn Total;
+        private Button button5;
     }
 }

@@ -24,6 +24,13 @@ namespace Eco_Grocery_Mart
             InitializeComponent();
             // LoadProducts(); // Call method when form loads */
 
+            // Standard design settings
+            this.Size = new Size(1200, 800);
+            this.StartPosition = FormStartPosition.CenterScreen;
+            this.FormBorderStyle = FormBorderStyle.Sizable; // Allow resize
+            this.MaximizeBox = true;
+
+
         }
 
         //db connection
@@ -237,8 +244,19 @@ namespace Eco_Grocery_Mart
         {
 
         }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+
+            this.Hide();
+            Dashboard dashboard = new Dashboard();
+            dashboard.Close();
+            //this.Close();  // or this.Hide();
+        }
+
     }
 }
+
 
 
 

@@ -11,6 +11,13 @@ namespace Eco_Grocery_Mart
         public Login()
         {
             InitializeComponent();
+
+            // Standard design settings
+            this.Size = new Size(1200, 800);
+            this.StartPosition = FormStartPosition.CenterScreen;
+            this.FormBorderStyle = FormBorderStyle.Sizable; // Allow resize
+            this.MaximizeBox = true;
+
         }
 
         private void Form1_Load(object sender, EventArgs e)

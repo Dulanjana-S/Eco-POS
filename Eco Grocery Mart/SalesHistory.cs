@@ -16,6 +16,13 @@ namespace Eco_Grocery_Mart
         public SalesHistory()
         {
             InitializeComponent();
+
+            // Standard design settings
+            this.Size = new Size(1200, 800);
+            this.StartPosition = FormStartPosition.CenterScreen;
+            this.FormBorderStyle = FormBorderStyle.Sizable; // Allow resize
+            this.MaximizeBox = true;
+
         }
         string connectionString = "Data Source=DESKTOP-O3R14AN\\SQLEXPRESS;Initial Catalog=EcoMart_POS;Integrated Security=True;Encrypt=False;TrustServerCertificate=True;";
 
@@ -49,6 +56,13 @@ namespace Eco_Grocery_Mart
 
         private void LoadFilteredSalesHistory(DateTime fromDate, DateTime toDate)
         {
+            // Ensure SQL-compatible date range
+            if (fromDate < new DateTime(1753, 1, 1))
+                fromDate = new DateTime(1753, 1, 1);
+
+            if (toDate < new DateTime(1753, 1, 1))
+                toDate = new DateTime(1753, 1, 1);
+
             string query = @"
         SELECT 
             S.SaleID,
@@ -99,10 +113,11 @@ namespace Eco_Grocery_Mart
 
         private void button2_Click(object sender, EventArgs e)
         {
-     
-            this.Hide();  // Hide the Product Manager form
-            Sales saleForm = new Sales();  // Create instance of your Sale form
-            saleForm.Show();  // Show Sale form
+            this.Hide();
+            Dashboard dashboard = new Dashboard();
+            dashboard.Close();
+            // this.Close();  // closes Sales History form
+
  
         }
 
@@ -112,6 +127,16 @@ namespace Eco_Grocery_Mart
             DateTime toDate = dateTimePicker2.Value.Date.AddDays(1).AddTicks(-1); // include entire day
 
             LoadFilteredSalesHistory(fromDate, toDate);
+        }
+
+        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dateTimePicker2_ValueChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

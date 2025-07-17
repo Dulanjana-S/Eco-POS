@@ -43,6 +43,8 @@
             textBox5 = new TextBox();
             dataGridView1 = new DataGridView();
             label7 = new Label();
+            button5 = new Button();
+            button6 = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
@@ -203,12 +205,33 @@
             label7.TabIndex = 20;
             label7.Text = "Product Management";
             // 
+            // button5
+            // 
+            button5.Location = new Point(0, 0);
+            button5.Name = "button5";
+            button5.Size = new Size(102, 31);
+            button5.TabIndex = 21;
+            button5.Text = "button5";
+            button5.UseVisualStyleBackColor = true;
+            // 
+            // button6
+            // 
+            button6.Location = new Point(587, 518);
+            button6.Name = "button6";
+            button6.Size = new Size(110, 30);
+            button6.TabIndex = 22;
+            button6.Text = "Back";
+            button6.UseVisualStyleBackColor = true;
+            button6.Click += button6_Click;
+            // 
             // Product_Manager
             // 
             AutoScaleDimensions = new SizeF(9F, 21F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(723, 535);
+            ClientSize = new Size(723, 553);
+            Controls.Add(button6);
+            Controls.Add(button5);
             Controls.Add(label7);
             Controls.Add(dataGridView1);
             Controls.Add(textBox5);
@@ -249,5 +272,7 @@
         private TextBox textBox5;
         private DataGridView dataGridView1;
         private Label label7;
+        private Button button5;
+        private Button button6;
     }
 }

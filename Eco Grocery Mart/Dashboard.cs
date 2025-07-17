@@ -15,6 +15,13 @@ namespace Eco_Grocery_Mart
         public Dashboard()
         {
             InitializeComponent(); //very important
+
+            // Standard design settings
+            this.Size = new Size(1200, 800);
+            this.StartPosition = FormStartPosition.CenterScreen;
+            this.FormBorderStyle = FormBorderStyle.Sizable; // Allow resize
+            this.MaximizeBox = true;
+
         }
         /* public MainForm(string username, string role)
         {

@@ -15,7 +15,14 @@ namespace Eco_Grocery_Mart
 
             ResumeLayout(false);
             PerformLayout();
-            this.Load += new System.EventHandler(this.Sales_Load); // 🔥 Add this
+            this.Load += new System.EventHandler(this.Sales_Load); //  Add this
+
+            // Standard design settings
+            this.Size = new Size(1200, 800);
+            this.StartPosition = FormStartPosition.CenterScreen;
+            this.FormBorderStyle = FormBorderStyle.Sizable; // Allow resize
+            this.MaximizeBox = true;
+
 
 
         }
@@ -59,17 +66,17 @@ namespace Eco_Grocery_Mart
             isFormLoading = true;
 
             LoadProductsTocomboBox1();
-         //   SetupCartGrid();
+            //   SetupCartGrid();
 
             isFormLoading = false;
 
         }
 
         private void SetupCartGrid()
-       {
-            
+        {
+
             dataGridView1.Columns.Add("ProductID", "ProductID");
-           // dataGridView1.Columns["ProductID"].Visible = false;
+            // dataGridView1.Columns["ProductID"].Visible = false;
             dataGridView1.Columns.Add("ProductName", "Product");
             dataGridView1.Columns.Add("Price", "Price");
             dataGridView1.Columns.Add("Quantity", "Quantity");
@@ -288,8 +295,8 @@ namespace Eco_Grocery_Mart
 
         private void button4_Click_1(object sender, EventArgs e)
         {
-           
-        
+
+
             decimal grandTotal = 0;
 
             foreach (DataGridViewRow row in dataGridView1.Rows)
@@ -308,7 +315,22 @@ namespace Eco_Grocery_Mart
             }
 
             textBox3.Text = grandTotal.ToString("N2"); // Show 2 decimal places
-       
+
+        }
+
+        private void Sales_Load_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Dashboard dashboard = new Dashboard();
+            dashboard.Close();  
+           // this.Close();      
+        
+
     }
 
     // You can remove other empty event handlers unless needed
