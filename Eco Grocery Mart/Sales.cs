@@ -21,7 +21,7 @@ namespace Eco_Grocery_Mart
            //comboBox1.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
         }
 
-        // Define your CartItem class
+        // InitializeComponent();
         public class CartItem
         {
             public int ProductID { get; set; }
