@@ -36,7 +36,6 @@
             label3 = new Label();
             textBox1 = new TextBox();
             textBox2 = new TextBox();
-            label4 = new Label();
             button1 = new Button();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -68,11 +67,11 @@
             label1.AutoSize = true;
             label1.Font = new Font("Cooper Black", 19.9384613F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label1.ForeColor = SystemColors.ControlText;
-            label1.Location = new Point(46, 29);
+            label1.Location = new Point(72, 64);
             label1.Name = "label1";
-            label1.Size = new Size(251, 41);
+            label1.Size = new Size(181, 41);
             label1.TabIndex = 1;
-            label1.Text = "Eco Grocery ";
+            label1.Text = "Eco Mart";
             label1.Click += label1_Click;
             // 
             // label2
@@ -117,18 +116,6 @@
             textBox2.Size = new Size(226, 29);
             textBox2.TabIndex = 5;
             // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.Font = new Font("Cooper Black", 19.9384613F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label4.ForeColor = SystemColors.ControlText;
-            label4.Location = new Point(111, 79);
-            label4.Name = "label4";
-            label4.Size = new Size(106, 41);
-            label4.TabIndex = 6;
-            label4.Text = "Mart";
-            label4.Click += label4_Click;
-            // 
             // button1
             // 
             button1.BackColor = Color.LightSkyBlue;
@@ -148,7 +135,6 @@
             BackColor = Color.LightCyan;
             ClientSize = new Size(702, 450);
             Controls.Add(button1);
-            Controls.Add(label4);
             Controls.Add(textBox2);
             Controls.Add(textBox1);
             Controls.Add(label3);
@@ -173,7 +159,6 @@
         private Label label3;
         private TextBox textBox1;
         private TextBox textBox2;
-        private Label label4;
         private Button button1;
     }
 }
