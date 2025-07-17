@@ -35,7 +35,7 @@ namespace Eco_Grocery_Mart
         // string connectionString = "Server=DESKTOP-O3R14AN\\SQLEXPRESS;Database==EcoMart_POS;User Id=admin;Password=1234;Encrypt=True;TrustServerCertificate=True;";
 
 
-        
+
 
         private void label5_Click(object sender, EventArgs e)
         {
@@ -69,7 +69,7 @@ namespace Eco_Grocery_Mart
             }
         }
 
-       
+
         private void LoadProducts()
         {
             using (SqlConnection con = new SqlConnection(connectionString))
@@ -112,7 +112,7 @@ namespace Eco_Grocery_Mart
         {
 
         }
-       
+
         /*    {
 
                if (textBox1.Text != "" && textBox3.Text != "" && textBox4.Text != "")
@@ -217,7 +217,7 @@ namespace Eco_Grocery_Mart
 
         private void textBox5_TextChanged(object sender, EventArgs e)
         {
-        
+
             using (SqlConnection con = new SqlConnection(connectionString))
             {
                 SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM ProductManager WHERE Name LIKE @search", con);
@@ -228,9 +228,17 @@ namespace Eco_Grocery_Mart
             }
         }
 
+        private void textBox4_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox3_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
-
 
 
 

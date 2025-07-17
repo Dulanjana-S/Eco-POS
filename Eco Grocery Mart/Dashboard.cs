@@ -32,11 +32,12 @@ namespace Eco_Grocery_Mart
 
         private void button4_Click(object sender, EventArgs e)
         {
-
+            // Hide or close the Dashboard
             this.Hide();
-            Dashboard login = new Dashboard();
-            login.Show();
-            
+
+            // Show the Login form again
+            Login loginForm = new Login();
+            loginForm.Show();  
         }
 
         private void Dashboard_Load(object sender, EventArgs e)

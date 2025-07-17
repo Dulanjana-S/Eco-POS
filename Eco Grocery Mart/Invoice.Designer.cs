@@ -67,7 +67,7 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Font = new Font("Arial", 11.0769234F, FontStyle.Bold);
+            label3.Font = new Font("Arial", 11.0769234F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label3.Location = new Point(21, 118);
             label3.Name = "label3";
             label3.Size = new Size(60, 24);
@@ -80,9 +80,9 @@
             label6.Font = new Font("Arial", 11.0769234F, FontStyle.Bold);
             label6.Location = new Point(21, 161);
             label6.Name = "label6";
-            label6.Size = new Size(57, 24);
+            label6.Size = new Size(64, 24);
             label6.TabIndex = 6;
-            label6.Text = "Total";
+            label6.Text = "Total:";
             // 
             // label7
             // 
@@ -123,7 +123,7 @@
             dataGridView1.RowHeadersWidth = 56;
             dataGridViewCellStyle2.BackColor = Color.White;
             dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle2;
-            dataGridView1.Size = new Size(467, 233);
+            dataGridView1.Size = new Size(467, 247);
             dataGridView1.TabIndex = 0;
             dataGridView1.CellContentClick += dataGridView1_CellContentClick;
             // 

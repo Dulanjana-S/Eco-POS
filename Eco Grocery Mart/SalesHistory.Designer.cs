@@ -38,10 +38,6 @@
             button1 = new Button();
             label4 = new Label();
             dataGridView1 = new DataGridView();
-            Column1 = new DataGridViewTextBoxColumn();
-            Column2 = new DataGridViewTextBoxColumn();
-            Column3 = new DataGridViewTextBoxColumn();
-            Column4 = new DataGridViewTextBoxColumn();
             button2 = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
@@ -102,6 +98,7 @@
             button1.TabIndex = 6;
             button1.Text = "Search";
             button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
             // 
             // label4
             // 
@@ -127,40 +124,11 @@
             dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
             dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { Column1, Column2, Column3, Column4 });
             dataGridView1.Location = new Point(36, 239);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 56;
             dataGridView1.Size = new Size(597, 272);
             dataGridView1.TabIndex = 8;
-            // 
-            // Column1
-            // 
-            Column1.HeaderText = "Sale ID";
-            Column1.MinimumWidth = 7;
-            Column1.Name = "Column1";
-            Column1.Width = 135;
-            // 
-            // Column2
-            // 
-            Column2.HeaderText = "Date/Time";
-            Column2.MinimumWidth = 7;
-            Column2.Name = "Column2";
-            Column2.Width = 135;
-            // 
-            // Column3
-            // 
-            Column3.HeaderText = "Total Amount";
-            Column3.MinimumWidth = 7;
-            Column3.Name = "Column3";
-            Column3.Width = 135;
-            // 
-            // Column4
-            // 
-            Column4.HeaderText = "View Details";
-            Column4.MinimumWidth = 7;
-            Column4.Name = "Column4";
-            Column4.Width = 135;
             // 
             // button2
             // 
@@ -206,10 +174,6 @@
         private Button button1;
         private Label label4;
         private DataGridView dataGridView1;
-        private DataGridViewTextBoxColumn Column1;
-        private DataGridViewTextBoxColumn Column2;
-        private DataGridViewTextBoxColumn Column3;
-        private DataGridViewTextBoxColumn Column4;
         private Button button2;
     }
 }
