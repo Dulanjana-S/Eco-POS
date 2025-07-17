@@ -11,250 +11,85 @@ namespace Eco_Grocery_Mart
     {
         public Sales()
         {
-        // InitializeComponent();
-         //((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
-         // this.Load += new System.EventHandler(this.Sales_Load);
-          // comboBox1.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
+            InitializeComponent();
 
-          InitializeComponent();
-        //  this.Load += Sales_Load;
-           //comboBox1.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
+            ResumeLayout(false);
+            PerformLayout();
+            this.Load += new System.EventHandler(this.Sales_Load); // 🔥 Add this
+
+
         }
+        string connectionString = "Data Source=DESKTOP-O3R14AN\\SQLEXPRESS;Initial Catalog=EcoMart_POS;Integrated Security=True;Encrypt=False;TrustServerCertificate=True;";
 
-        // InitializeComponent();
-        public class CartItem
+
+        private void LoadProductsTocomboBox1()
         {
-            public int ProductID { get; set; }
-            public string Name { get; set; }
-            public int Quantity { get; set; }
-            public decimal Price { get; set; }
-            public decimal Total => Quantity * Price;
-        }
 
-        // Cart to hold added items
-        List<CartItem> cart = new List<CartItem>();
+            MessageBox.Show("Loading products..."); // Debug line
 
-        // Connection string
-        private readonly string connectionString = "Data Source=DESKTOP-O3R14AN\\SQLEXPRESS;Initial Catalog=EcoMart_POS;Integrated Security=True";
-
-        private void LoadProductsToComboBox(object sender, EventArgs e)
-        {
-            
-        LoadProducts();
-            EnableAutoComplete();
-            //EnablecomboBox1AutoComplete();
-        }
-
-
-        private void LoadProducts()
-        {
-            using (SqlConnection con = new SqlConnection("Data Source=DESKTOP-O3R14AN\\SQLEXPRESS;Initial Catalog=EcoMart_POS;Integrated Security=True"))
-            // using (SqlConnection con = new SqlConnection(connectionString))
-
-            {
-                SqlDataAdapter da = new SqlDataAdapter("SELECT ProductID, Name FROM ProductManager", con);
-                DataTable dt = new DataTable();
-                da.Fill(dt);
-                if (dt.Rows.Count == 0)
-
-                {
-                    MessageBox.Show("No products found in ProductManager table.");
-                }
-
-                comboBox1.DataSource = dt;
-                comboBox1.DisplayMember = "Name";
-                comboBox1.ValueMember = "ProductID";
-            }
-        }
-
-        private void EnableAutoComplete() //EnablecomboBox1AutoComplete()
-        {
-            comboBox1.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
-            comboBox1.AutoCompleteSource = AutoCompleteSource.ListItems;
-            comboBox1.DropDownStyle = ComboBoxStyle.DropDown;
-        }
-
-        private void Sales_Load() //LoadProductsToComboBox()
-        {
-            using (SqlConnection con = new SqlConnection("Data Source=DESKTOP-O3R14AN\\SQLEXPRESS;Initial Catalog=EcoMart_POS;Integrated Security=True"))
-            {
-                string query = "SELECT ProductID, Name FROM ProductManager";
-                SqlDataAdapter da = new SqlDataAdapter(query, con);
-                DataTable dt = new DataTable();
-                da.Fill(dt);
-
-                comboBox1.DataSource = dt;
-                comboBox1.DisplayMember = "Name";       // What the user sees
-                comboBox1.ValueMember = "ProductID";    // What you use in code (SelectedValue)
-            }
-        }
-
-        /*private void LoadProductsToComboBox()
-        {
-            using (SqlConnection conn = new SqlConnection(connectionString))
-            {
-                conn.Open();
-                SqlCommand cmd = new SqlCommand("SELECT Name FROM ProductManager", conn);
-                SqlDataReader reader = cmd.ExecuteReader();
-                while (reader.Read())
-                {
-                    comboBox1.Items.Add(reader["Name"].ToString());
-                }
-            }
-        }*/
-
-
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (comboBox1.SelectedValue == null)
-                return;
-
-            if (!int.TryParse(comboBox1.SelectedValue.ToString(), out int productId))
-                return;
-
-            // Optional: get more info (e.g., price)
-            decimal price = GetProductPriceById(productId);
-            textBox1.Text = $"Price: Rs. {price:N2}"; // example
-        }
-        private decimal GetProductPriceById(int productId)
-        {
-            using (SqlConnection conn = new SqlConnection(connectionString))
-            {
-                conn.Open();
-                SqlCommand cmd = new SqlCommand("SELECT Price FROM Products WHERE ProductID = @id", conn);
-                cmd.Parameters.AddWithValue("@id", productId);
-
-                object result = cmd.ExecuteScalar();
-                return result != null ? Convert.ToDecimal(result) : 0;
-            }
-        }
-
-
-        /*  { 
-              if (comboBox1.SelectedValue == null)
-                  return;
-
-              if (!int.TryParse(comboBox1.SelectedValue.ToString(), out int productId))
-                  return;  
-          }*/
-
-        //ADD TO CART Button
-        private void button1_Click(object sender, EventArgs e)
-        {
-            // Validate inputs
-            if (comboBox1.SelectedValue == null || string.IsNullOrWhiteSpace(textBox2.Text))
-            {
-                MessageBox.Show("Please select a product and enter quantity.");
-                return;
-            }
-
-            int productId = Convert.ToInt32(comboBox1.SelectedValue);
-            string name = comboBox1.Text;
-
-            if (!int.TryParse(textBox2.Text, out int qty) || qty <= 0)
-            {
-                MessageBox.Show("Enter a valid quantity.");
-                return;
-            }
-
-           decimal price = 0;
             using (SqlConnection con = new SqlConnection(connectionString))
             {
-                SqlCommand cmd = new SqlCommand("SELECT Price FROM ProductManager WHERE ProductID = @id", con); // Corrected table
-                cmd.Parameters.AddWithValue("@id", productId);
-                con.Open();
-                price = (decimal)cmd.ExecuteScalar();
-                con.Close();
-            }
- 
-            var item = new CartItem
-            {
-                ProductID = productId,
-                Name = name,
-                Quantity = qty,
-                Price = price
-            };
-
-            cart.Add(item);
-            dataGridView1.DataSource = null;
-            dataGridView1.DataSource = cart;
-
-            textBox3.Text = "Total: Rs. " + cart.Sum(i => i.Total);
-        }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        // You can remove other empty event handlers unless needed
-    }
-}
-/*
-using Microsoft.Data.SqlClient;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.TextBox;
-
-namespace Eco_Grocery_Mart
-{
-    public partial class Sales : Form
-    {
-        public Sales()
-        {
-            InitializeComponent();
-        }
-
-        List<CartItem> cart = new List<CartItem>();
-
-        private void LoadProducts()
-        {
-            using (SqlConnection con = new SqlConnection("Data Source=DESKTOP-O3R14AN\\SQLEXPRESS;Initial Catalog=EcoMart_POS;Integrated Security=True"))
-            {
                 SqlDataAdapter da = new SqlDataAdapter("SELECT ProductID, Name FROM ProductManager", con);
                 DataTable dt = new DataTable();
                 da.Fill(dt);
+
+
+                // da.Fill(dt);
+
+                MessageBox.Show("Rows loaded: " + dt.Rows.Count); // Debug line
+
                 comboBox1.DataSource = dt;
                 comboBox1.DisplayMember = "Name";
                 comboBox1.ValueMember = "ProductID";
+
+                MessageBox.Show("Loaded: " + dt.Rows.Count + " products");
+
+                //product
+
+
             }
-        }
-        private void SalesForm_Load(object sender, EventArgs e)
-        {
-            LoadProducts();
-            EnableAutoComplete();
-        }
-        private void EnableAutoComplete()
-        {
-            comboBox1.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
-            comboBox1.AutoCompleteSource = AutoCompleteSource.ListItems;
-            comboBox1.DropDownStyle = ComboBoxStyle.DropDown;
+
         }
 
-        
+
+        bool isFormLoading = true;
+
+        private void Sales_Load(object sender, EventArgs e)
+        {
+            isFormLoading = true;
+
+            LoadProductsTocomboBox1();
+         //   SetupCartGrid();
+
+            isFormLoading = false;
+
+        }
+
+        private void SetupCartGrid()
+       {
+            
+            dataGridView1.Columns.Add("ProductID", "ProductID");
+           // dataGridView1.Columns["ProductID"].Visible = false;
+            dataGridView1.Columns.Add("ProductName", "Product");
+            dataGridView1.Columns.Add("Price", "Price");
+            dataGridView1.Columns.Add("Quantity", "Quantity");
+            dataGridView1.Columns.Add("Total", "Total");
+            ;
+        }
+
+
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
+            if (isFormLoading) return; // prevent loading-time errors
+
             if (comboBox1.SelectedValue == null) return;
 
-            int productId;
-            if (!int.TryParse(comboBox1.SelectedValue.ToString(), out productId)) return;
+            if (!int.TryParse(comboBox1.SelectedValue.ToString(), out int ProductId)) return;
 
-            using (SqlConnection con = new SqlConnection("Data Source=DESKTOP-O3R14AN\\SQLEXPRESS;Initial Catalog=EcoMart_POS;Integrated Security=True"))
+            using (SqlConnection con = new SqlConnection(connectionString))
             {
                 SqlCommand cmd = new SqlCommand("SELECT Price FROM ProductManager WHERE ProductID = @id", con);
-                cmd.Parameters.AddWithValue("@id", productId);
+                cmd.Parameters.AddWithValue("@id", ProductId);
                 con.Open();
                 object result = cmd.ExecuteScalar();
                 con.Close();
@@ -263,94 +98,41 @@ namespace Eco_Grocery_Mart
             }
         }
 
-        /* {
-            int productId = Convert.ToInt32(comboBox1.SelectedValue);
-
-            using (SqlConnection con = new SqlConnection("Data Source=DESKTOP-O3R14AN\\SQLEXPRESS;Initial Catalog=EcoMart_POS;Integrated Security=True"))
-            {
-                SqlCommand cmd = new SqlCommand("SELECT Price FROM ProductManager WHERE ProductID = @id", con);
-                cmd.Parameters.AddWithValue("@id", productId);
-                con.Open();
-                object result = cmd.ExecuteScalar();
-                con.Close();
-
-                if (result != null)
-                {
-                    textBox1.Text = result.ToString();
-                }
-                else
-                {
-                    textBox1.Text = "";
-                }
-            }
-        }
-        */
 
 
-/*   private void LoadProducts()
-   {
-       using (SqlConnection con = new SqlConnection("Data Source=DESKTOP-O3R14AN\\SQLEXPRESS;Initial Catalog=EcoMart_POS;Integrated Security=True"))
-       {
-           SqlDataAdapter da = new SqlDataAdapter("SELECT ProductID, Name FROM ProductManager", con);
-           DataTable dt = new DataTable();
-           da.Fill(dt);
-           comboBox1.DataSource = dt;
-           comboBox1.DisplayMember = "Name";
-           comboBox1.ValueMember = "ProductID";
-       }
-   }
-   private void EnableAutoComplete()
-   {
-       comboBox1.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
-       comboBox1.AutoCompleteSource = AutoCompleteSource.ListItems;
-       comboBox1.DropDownStyle = ComboBoxStyle.DropDown;
-   }
-
-   private void SalesForm_Load(object sender, EventArgs e)
-   {
-       LoadProducts();
-       EnableAutoComplete();
-   }
-   */
-
-
-
-
-/*
-private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
+        //ADD TO CART Button
         private void button1_Click(object sender, EventArgs e)
-           
         {
-            int productId = Convert.ToInt32(comboBox1.SelectedValue);
+            if (comboBox1.SelectedValue == null || string.IsNullOrWhiteSpace(textBox1.Text) || string.IsNullOrWhiteSpace(textBox2.Text))
+                return;
+
+            int productId = (int)comboBox1.SelectedValue;
             string name = comboBox1.Text;
+            decimal price = decimal.Parse(textBox1.Text);
             int qty = int.Parse(textBox2.Text);
+            decimal total = price * qty;
 
+            dataGridView1.Rows.Add(productId, name, price, qty, total);
 
-            decimal price = 0;
-
-            // private string connectionString = "Data Source=DESKTOP-O3R14AN\\SQLEXPRESS;Initial Catalog=EcoMart_POS;Integrated Security=True";
-            using (SqlConnection con = new SqlConnection("Data Source=DESKTOP-O3R14AN\\SQLEXPRESS;Initial Catalog=EcoMart_POS;Integrated Security=True"))
-           // using (SqlConnection con = new SqlConnection(connectionString))
-            {
-                SqlCommand cmd = new SqlCommand("SELECT Price FROM Products WHERE ProductID = @id", con);
-                cmd.Parameters.AddWithValue("@id", productId);
-                con.Open();
-                price = (decimal)cmd.ExecuteScalar();
-            }
-
-            var item = new CartItem { ProductID = productId, ProductName = name, Quantity = qty, Price = price };
-            cart.Add(item);
-
-            dataGridView1.DataSource = null;
-            dataGridView1.DataSource = cart;
-            textBox3.Text = "Total: Rs. " + cart.Sum(i => i.Total);
         }
 
-        
+        private void UpdateGrandTotal()
+
+        {
+            decimal grandTotal = 0;
+
+            foreach (DataGridViewRow row in dataGridView1.Rows)
+            {
+                if (row.Cells["Total"].Value != null && decimal.TryParse(row.Cells["Total"].Value.ToString(), out decimal rowTotal))
+                {
+                    grandTotal += rowTotal;
+                }
+            }
+
+            textBox3.Text = grandTotal.ToString("N2"); // Format as currency
+
+        }
+
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -367,15 +149,168 @@ private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
 
         }
 
-        private void label7_Click(object sender, EventArgs e)
+        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
         {
 
         }
 
-        private void label5_Click(object sender, EventArgs e)
+        //GrandTotal 
+        private void button3_Click(object sender, EventArgs e)
+        {
+
+            dataGridView1.Rows.Clear();         // Clear all rows from cart
+            textBox3.Text = "0.00";             // Reset Grand Total    
+        }
+
+        private void textBox3_TextChanged(object sender, EventArgs e)
         {
 
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                // Calculate Total Amount
+                decimal totalAmount = 0;
+                foreach (DataGridViewRow row in dataGridView1.Rows)
+                {
+                    if (row.IsNewRow) continue;
+
+                    if (row.Cells["Total"].Value != null)
+                        totalAmount += Convert.ToDecimal(row.Cells["Total"].Value);
+                }
+
+                int saleID;
+
+                // Insert into Sales table
+                using (SqlConnection con = new SqlConnection(connectionString))
+                {
+                    con.Open();
+
+                    string insertSale = "INSERT INTO Sales (TotalAmount) OUTPUT INSERTED.SaleID VALUES (@total)";
+                    SqlCommand cmd = new SqlCommand(insertSale, con);
+                    cmd.Parameters.AddWithValue("@total", totalAmount);
+                    saleID = (int)cmd.ExecuteScalar();
+
+                    // Insert each item into SalesHistory
+                    foreach (DataGridViewRow row in dataGridView1.Rows)
+                    {
+                        if (row.IsNewRow) continue;
+
+                        int productId = Convert.ToInt32(row.Cells["ProductID"].Value);
+                        decimal price = Convert.ToDecimal(row.Cells["Price"].Value);
+                        int qty = Convert.ToInt32(row.Cells["Quantity"].Value);
+
+                        SqlCommand detailCmd = new SqlCommand(
+                            "INSERT INTO SalesHistory (SaleID, ProductID, Quantity, Price) VALUES (@saleID, @productID, @qty, @price)", con);
+
+                        detailCmd.Parameters.AddWithValue("@saleID", saleID);
+                        detailCmd.Parameters.AddWithValue("@productID", productId);
+                        detailCmd.Parameters.AddWithValue("@qty", qty);
+                        detailCmd.Parameters.AddWithValue("@price", price);
+
+                        detailCmd.ExecuteNonQuery();
+                    }
+
+                    con.Close();
+                }
+
+                // Open Invoice Form
+                Invoice invoiceForm = new Invoice(saleID, totalAmount);
+                invoiceForm.Show();
+
+                MessageBox.Show("Sale completed and invoice generated!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                // Optional: Clear cart and total
+                dataGridView1.Rows.Clear();
+                textBox3.Text = "0.00";
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error during checkout: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        /* {
+        // : Calculate totalAmount
+        decimal totalAmount = 0;
+        foreach (DataGridViewRow row in dataGridView1.Rows)
+        {
+            if (row.Cells["Total"].Value != null)
+            {
+                totalAmount += Convert.ToDecimal(row.Cells["Total"].Value);
+            }
+        }
+
+        // Insert into Sales table and get the SaleID
+        int saleID;
+
+        using (SqlConnection con = new SqlConnection(connectionString))
+        {
+            string insertSale = "INSERT INTO Sales (TotalAmount) OUTPUT INSERTED.SaleID VALUES (@total)";
+            SqlCommand cmd = new SqlCommand(insertSale, con);
+            cmd.Parameters.AddWithValue("@total", totalAmount);
+
+            con.Open();
+            saleID = (int)cmd.ExecuteScalar(); // Gets the new SaleID
+            con.Close();
+        }
+
+        //  Pass to Invoice form
+        Invoice invoiceForm = new Invoice(saleID, totalAmount);
+        invoiceForm.Show();
+
+
+        // Invoice invoiceForm = new Invoice (saleID, totalAmount);
+        //  invoiceForm.Show();
+
+    }
+*/
+
+        /*  private void button4_Click(object sender, EventArgs e)
+          {
+              {
+                  decimal grandTotal = 0;
+
+                  foreach (DataGridViewRow row in dataGridView1.Rows)
+                  {
+                      if (row.Cells["Total"].Value != null && decimal.TryParse(row.Cells["Total"].Value.ToString(), out decimal rowTotal))
+                      {
+                          grandTotal += rowTotal;
+                      }
+                  }
+
+                  textBox3.Text = grandTotal.ToString("N2"); // Show with 2 decimal places
+
+              }
+          }*/
+
+        private void button4_Click_1(object sender, EventArgs e)
+        {
+           
+        
+            decimal grandTotal = 0;
+
+            foreach (DataGridViewRow row in dataGridView1.Rows)
+            {
+                // Ignore the new blank row at the bottom of DataGridView (if AllowUserToAddRows = true)
+                if (row.IsNewRow)
+                    continue;
+
+                // Read "Total" cell value
+                object totalValue = row.Cells["Total"].Value;
+
+                if (totalValue != null && decimal.TryParse(totalValue.ToString(), out decimal rowTotal))
+                {
+                    grandTotal += rowTotal;
+                }
+            }
+
+            textBox3.Text = grandTotal.ToString("N2"); // Show 2 decimal places
+       
     }
 
-*/
+    // You can remove other empty event handlers unless needed
+}
+}
