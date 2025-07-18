@@ -25,33 +25,26 @@ Visual Studio 2022 or later
 NET Framework (4.7.2+ recommended)
 SQL Server Express or LocalDB
 
-
-
-
-🧪 Installation / Setup Instructions:
-Steps to install and run the project 
-798" height="729"
-1129" height="731"
 ## Login
 
 <img width="700" height="730" alt="1" src="https://github.com/user-attachments/assets/a6bf937a-a977-4e15-9723-13cf7cbfa68b" />
 
 ## Dashboard
-<img width="798" height="729" alt="2" src="https://github.com/user-attachments/assets/226a17d7-05af-4e6a-96a9-3e2d624a6444" />
+<img width="700" height="730" alt="2" src="https://github.com/user-attachments/assets/226a17d7-05af-4e6a-96a9-3e2d624a6444" />
 
 ## ProductManage
-<img width="1132" height="732" alt="3" src="https://github.com/user-attachments/assets/04b09eaa-1c88-4929-b215-a8217f4b297f" />
+<img width="700" height="730" alt="3" src="https://github.com/user-attachments/assets/04b09eaa-1c88-4929-b215-a8217f4b297f" />
 
 ## Sales
-<img width="1126" height="727" alt="4" src="https://github.com/user-attachments/assets/09d92041-bbf6-44df-b631-6de9e2ae85f8" />
+<img width="700" height="730" alt="4" src="https://github.com/user-attachments/assets/09d92041-bbf6-44df-b631-6de9e2ae85f8" />
 
 ## Invoice
 <img width="500" height="555" alt="5" src="https://github.com/user-attachments/assets/d9517a37-18d7-45e0-b509-a3cddd371a5d" />
 
 ## SalesHistory
-<img width="1131" height="730" alt="6" src="https://github.com/user-attachments/assets/aa486b45-014c-41aa-8959-e7cba8c9b112" /
+<img width="700" height="730" alt="6" src="https://github.com/user-attachments/assets/aa486b45-014c-41aa-8959-e7cba8c9b112" />
 
-## ⚙️ Setup Instructions
+## ⚙️ Installation / Setup Instructions:
 1. **Clone the repository:**
  ```bash 
 git clone https://github.com/yourusername/EcoGroceryMart.git
