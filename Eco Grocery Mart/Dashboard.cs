@@ -17,10 +17,10 @@ namespace Eco_Grocery_Mart
             InitializeComponent();
 
             //  settings
-          //  this.Size = new Size(1200, 800);
-         //   this.StartPosition = FormStartPosition.CenterScreen;
-          //  this.FormBorderStyle = FormBorderStyle.Sizable; // Allow resize
-          //  this.MaximizeBox = true;
+            //  this.Size = new Size(1200, 800);
+            //   this.StartPosition = FormStartPosition.CenterScreen;
+            //  this.FormBorderStyle = FormBorderStyle.Sizable; // Allow resize
+            //  this.MaximizeBox = true;
 
 
             button1.Click += button1_Click;
@@ -101,25 +101,25 @@ namespace Eco_Grocery_Mart
         }
 
         // can add new window in  forms
-      /*  private void btnbutton1_Click(object sender, EventArgs e)
-        {
-            Product_Manager products = new Product_Manager();
-            products.Show();
+        /*  private void btnbutton1_Click(object sender, EventArgs e)
+          {
+              Product_Manager products = new Product_Manager();
+              products.Show();
 
-        }
+          }
 
-        private void btnbutton2_Click(object sender, EventArgs e)
-        {
-            Sales products = new Sales();
-            products.Show();
-        }
+          private void btnbutton2_Click(object sender, EventArgs e)
+          {
+              Sales products = new Sales();
+              products.Show();
+          }
 
-        private void btnbutton3_Click(object sender, EventArgs e)
-        {
-            SalesHistory history = new SalesHistory();
-            history.Show();
-        }
-      */
+          private void btnbutton3_Click(object sender, EventArgs e)
+          {
+              SalesHistory history = new SalesHistory();
+              history.Show();
+          }
+        */
 
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
@@ -141,6 +141,16 @@ namespace Eco_Grocery_Mart
         private void button3_Click(object sender, EventArgs e)
         {
             OpenFormInPanel(new SalesHistory());
+
+        }
+
+        private void monthCalendar1_DateChanged(object sender, DateRangeEventArgs e)
+        {
+
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
 
         }
     }

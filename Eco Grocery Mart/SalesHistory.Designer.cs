@@ -30,6 +30,7 @@
         {
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             label1 = new Label();
             label2 = new Label();
             label3 = new Label();
@@ -45,19 +46,23 @@
             // label1
             // 
             label1.AutoSize = true;
+            label1.BackColor = Color.Transparent;
             label1.Font = new Font("Arial Rounded MT Bold", 16.0615387F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label1.Location = new Point(155, 23);
+            label1.ForeColor = SystemColors.ButtonFace;
+            label1.Location = new Point(308, 21);
             label1.Name = "label1";
-            label1.Size = new Size(358, 33);
+            label1.Size = new Size(287, 33);
             label1.TabIndex = 1;
-            label1.Text = "Eco Mart - Sales History ";
+            label1.Text = "Eco - Sales History ";
             label1.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // label2
             // 
             label2.AutoSize = true;
+            label2.BackColor = Color.Transparent;
             label2.Font = new Font("Arial Rounded MT Bold", 8.861538F);
-            label2.Location = new Point(36, 97);
+            label2.ForeColor = SystemColors.ButtonFace;
+            label2.Location = new Point(38, 81);
             label2.Name = "label2";
             label2.Size = new Size(96, 18);
             label2.TabIndex = 2;
@@ -66,8 +71,10 @@
             // label3
             // 
             label3.AutoSize = true;
+            label3.BackColor = Color.Transparent;
             label3.Font = new Font("Arial Rounded MT Bold", 8.861538F);
-            label3.Location = new Point(78, 144);
+            label3.ForeColor = SystemColors.ButtonFace;
+            label3.Location = new Point(441, 86);
             label3.Name = "label3";
             label3.Size = new Size(33, 18);
             label3.TabIndex = 3;
@@ -76,7 +83,7 @@
             // 
             // dateTimePicker1
             // 
-            dateTimePicker1.Location = new Point(138, 89);
+            dateTimePicker1.Location = new Point(140, 78);
             dateTimePicker1.Name = "dateTimePicker1";
             dateTimePicker1.Size = new Size(271, 29);
             dateTimePicker1.TabIndex = 4;
@@ -84,7 +91,7 @@
             // 
             // dateTimePicker2
             // 
-            dateTimePicker2.Location = new Point(138, 136);
+            dateTimePicker2.Location = new Point(496, 78);
             dateTimePicker2.Name = "dateTimePicker2";
             dateTimePicker2.Size = new Size(271, 29);
             dateTimePicker2.TabIndex = 5;
@@ -94,7 +101,7 @@
             // 
             button1.BackColor = Color.DeepSkyBlue;
             button1.Font = new Font("Arial Rounded MT Bold", 9.969231F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button1.Location = new Point(440, 136);
+            button1.Location = new Point(791, 78);
             button1.Name = "button1";
             button1.Size = new Size(93, 29);
             button1.TabIndex = 6;
@@ -105,8 +112,10 @@
             // label4
             // 
             label4.AutoSize = true;
+            label4.BackColor = Color.Transparent;
             label4.Font = new Font("Arial Rounded MT Bold", 11.0769234F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label4.Location = new Point(36, 201);
+            label4.ForeColor = SystemColors.ButtonFace;
+            label4.Location = new Point(27, 129);
             label4.Name = "label4";
             label4.Size = new Size(138, 23);
             label4.TabIndex = 7;
@@ -126,17 +135,26 @@
             dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
             dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(36, 239);
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = SystemColors.Window;
+            dataGridViewCellStyle3.Font = new Font("Segoe UI", 8.861538F);
+            dataGridViewCellStyle3.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
+            dataGridView1.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridView1.Location = new Point(27, 166);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 56;
-            dataGridView1.Size = new Size(885, 272);
+            dataGridView1.Size = new Size(871, 421);
             dataGridView1.TabIndex = 8;
+            dataGridView1.CellContentClick += dataGridView1_CellContentClick;
             // 
             // button2
             // 
             button2.BackColor = Color.DeepSkyBlue;
             button2.Font = new Font("Arial Rounded MT Bold", 9.969231F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button2.Location = new Point(484, 518);
+            button2.Location = new Point(749, 605);
             button2.Name = "button2";
             button2.Size = new Size(149, 34);
             button2.TabIndex = 9;
@@ -148,7 +166,9 @@
             // 
             AutoScaleDimensions = new SizeF(9F, 21F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(982, 651);
+            BackColor = Color.White;
+            BackgroundImage = Properties.Resources.Monochrome_Neon_Gadget_Logo___Copy;
+            ClientSize = new Size(926, 651);
             Controls.Add(button2);
             Controls.Add(dataGridView1);
             Controls.Add(label4);

@@ -32,7 +32,7 @@ namespace Eco_Grocery_Mart
         private void LoadProductsTocomboBox1()
         {
 
-            MessageBox.Show("Loading products..."); // Debug line
+        //    MessageBox.Show("Loading products..."); // Debug line
 
             using (SqlConnection con = new SqlConnection(connectionString))
             {
@@ -43,21 +43,18 @@ namespace Eco_Grocery_Mart
 
                 // da.Fill(dt);
 
-                MessageBox.Show("Rows loaded: " + dt.Rows.Count); // Debug line
+               // MessageBox.Show("Rows loaded: " + dt.Rows.Count); // Debug line
 
                 comboBox1.DataSource = dt;
                 comboBox1.DisplayMember = "Name";
                 comboBox1.ValueMember = "ProductID";
 
-                MessageBox.Show("Loaded: " + dt.Rows.Count + " products");
-
-                //product
+               // MessageBox.Show("Loaded: " + dt.Rows.Count + " products");
 
 
             }
 
         }
-
 
         bool isFormLoading = true;
 
@@ -275,24 +272,6 @@ namespace Eco_Grocery_Mart
     }
 */
 
-        /*  private void button4_Click(object sender, EventArgs e)
-          {
-              {
-                  decimal grandTotal = 0;
-
-                  foreach (DataGridViewRow row in dataGridView1.Rows)
-                  {
-                      if (row.Cells["Total"].Value != null && decimal.TryParse(row.Cells["Total"].Value.ToString(), out decimal rowTotal))
-                      {
-                          grandTotal += rowTotal;
-                      }
-                  }
-
-                  textBox3.Text = grandTotal.ToString("N2"); // Show with 2 decimal places
-
-              }
-          }*/
-
         private void button4_Click_1(object sender, EventArgs e)
         {
 
@@ -331,8 +310,8 @@ namespace Eco_Grocery_Mart
            // this.Close();      
         
 
-    }
+        }
 
-    // You can remove other empty event handlers unless needed
-}
+    
+    }
 }

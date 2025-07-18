@@ -13,10 +13,10 @@ namespace Eco_Grocery_Mart
             InitializeComponent();
 
             // Standard design settings
-            this.Size = new Size(1200, 800);
-            this.StartPosition = FormStartPosition.CenterScreen;
-            this.FormBorderStyle = FormBorderStyle.Sizable; // Allow resize
-            this.MaximizeBox = true;
+            //  this.Size = new Size(1200, 800);
+            // this.StartPosition = FormStartPosition.CenterScreen;
+            // this.FormBorderStyle = FormBorderStyle.Sizable; // Allow resize
+            // this.MaximizeBox = true;
 
         }
 
@@ -45,33 +45,50 @@ namespace Eco_Grocery_Mart
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
-       /* {
-            // Assume SQL connection and credential checking are already implemented
-            if (textBox1.Text != "" && textBox2.Text != "")
+       /* private void button1_Click(object sender, EventArgs e)
+
+
+       {
+            string username = textBox1.Text;
+            string password = textBox2.Text;
+
+            //username == "admin" && password == "1234")
+
+            if (username == "admin" && password == "1234")
             {
-                // Replace this with your own SQL credential check
-                //if (log(textBox1.Text, textBox2.Text))
-                    if (IsLoginValid(admin, 1234)) 
+                MessageBox.Show("Login successful!");
+                // Navigate to main form
+                /* this.Hide();
+                 new Login().Show();  // change Form1 to your real main form name */
 
-                {
-                    this.Hide();                // Hide the login form
-                    Dashboard dashboard = new Dashboard(); // Create dashboard form
-                    dashboard.ShowDialog();     // Open dashboard as a modal dialog
-                    this.Close();               // Close login form after dashboard is closed
+        /*                this.Hide();                // Hide the login form
+                        Dashboard Dashboard = new Dashboard(); // Create dashboard form
+                        Dashboard.Show();     // Open dashboard as a modal dialog
+
+                    }
+                    else
+                    {
+                        MessageBox.Show("Invalid login credentials.");
+                    }
                 }
-                else
-                {
-                    MessageBox.Show("Invalid username or password.", "Login Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
-            else
-            {
-                MessageBox.Show("Please enter username and password.", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-        } */
+        */
 
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
 
+        }
+
+        private void pictureBox1_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button4_Click(object sender, EventArgs e)
         {
             string username = textBox1.Text;
             string password = textBox2.Text;
@@ -84,22 +101,16 @@ namespace Eco_Grocery_Mart
                 // Navigate to main form
                 /* this.Hide();
                  new Login().Show();  // change Form1 to your real main form name */
-                
+
                 this.Hide();                // Hide the login form
                 Dashboard Dashboard = new Dashboard(); // Create dashboard form
                 Dashboard.Show();     // Open dashboard as a modal dialog
-               
+
             }
             else
             {
                 MessageBox.Show("Invalid login credentials.");
             }
         }
-        
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
     }
-} 
+}

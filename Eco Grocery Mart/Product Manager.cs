@@ -120,29 +120,7 @@ namespace Eco_Grocery_Mart
 
         }
 
-        /*    {
-
-               if (textBox1.Text != "" && textBox3.Text != "" && textBox4.Text != "")
-           {
-               con.Open();
-               SqlCommand cmd = new SqlCommand("INSERT INTO Products (Name, Price, Quantity) VALUES (@name, @price, @qty)", con);
-               cmd.Parameters.AddWithValue("@name", textBox1.Text);
-               //cmd.Parameters.AddWithValue("@cat", txtCategory.Text); //deleted
-               cmd.Parameters.AddWithValue("@price", decimal.Parse(textBox3.Text));
-               cmd.Parameters.AddWithValue("@qty", int.Parse(textBox4.Text));
-               cmd.ExecuteNonQuery();
-               con.Close();
-
-               MessageBox.Show("Product added successfully.");
-               LoadProducts();
-               ClearFields();
-           }
-           else
-           {
-               MessageBox.Show("Fill all fields.");
-           }
-       }
-     */
+     
         private void button2_Click(object sender, EventArgs e)
 
         {
@@ -254,6 +232,10 @@ namespace Eco_Grocery_Mart
             //this.Close();  // or this.Hide();
         }
 
+        private void label7_Click_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 

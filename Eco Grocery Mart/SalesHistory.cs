@@ -118,7 +118,7 @@ namespace Eco_Grocery_Mart
             dashboard.Close();
             // this.Close();  // closes Sales History form
 
- 
+
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -135,6 +135,11 @@ namespace Eco_Grocery_Mart
         }
 
         private void dateTimePicker2_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }

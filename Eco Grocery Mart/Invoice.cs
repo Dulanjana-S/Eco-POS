@@ -12,12 +12,12 @@ using Microsoft.Data.SqlClient;
 
 namespace Eco_Grocery_Mart
 {
-  
+
     public partial class Invoice : Form
     {
         private int saleID;
         private decimal totalAmount;
-        public Invoice (int saleID, decimal totalAmount)
+        public Invoice(int saleID, decimal totalAmount)
         {
             InitializeComponent();
             this.saleID = saleID;
@@ -43,7 +43,7 @@ namespace Eco_Grocery_Mart
             {
 
                 //string query = @"SELECT P.Name, SH.Quantity, SH.Price, (SH.Quantity * SH.Price) AS Total
-                  string query = @"SELECT P.Name, SH.Quantity, SH.Price, (SH.Quantity * SH.Price) AS Total
+                string query = @"SELECT P.Name, SH.Quantity, SH.Price, (SH.Quantity * SH.Price) AS Total
 
                          FROM SalesHistory SH
                          JOIN ProductManager P ON P.ProductID = SH.ProductID
@@ -56,15 +56,15 @@ namespace Eco_Grocery_Mart
                 DataTable dt = new DataTable();
                 da.Fill(dt);
 
-                MessageBox.Show($"Rows loaded: {dt.Rows.Count}");
+               // MessageBox.Show($"Rows loaded: {dt.Rows.Count}");
 
 
                 dataGridView1.AutoGenerateColumns = true;
                 dataGridView1.DataSource = dt;
 
                 // content is visible
-              /*  dataGridView1.DefaultCellStyle.ForeColor = Color.Black;
-                dataGridView1.DefaultCellStyle.BackColor = Color.White; */
+                /*  dataGridView1.DefaultCellStyle.ForeColor = Color.Black;
+                  dataGridView1.DefaultCellStyle.BackColor = Color.White; */
 
 
                 // Calculate total and update label here
@@ -74,7 +74,7 @@ namespace Eco_Grocery_Mart
                     sumTotal += Convert.ToDecimal(row["Total"]);
                 }
                 label6.Text = "Total: Rs. " + sumTotal.ToString("N2");
-                MessageBox.Show(dt.Rows.Count + " rows loaded."); // Debug message
+               // MessageBox.Show(dt.Rows.Count + " rows loaded."); // Debug message
 
             }
         }
@@ -96,6 +96,17 @@ namespace Eco_Grocery_Mart
 
         private void label10_Click(object sender, EventArgs e)
         {
+
+        }
+
+        private void Invoice_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Close(); // Closes the Invoice form
 
         }
     }

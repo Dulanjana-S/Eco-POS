@@ -28,76 +28,78 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Dashboard));
             button1 = new Button();
             button2 = new Button();
             button3 = new Button();
             button4 = new Button();
-            label1 = new Label();
             panel1 = new Panel();
+            sqlCommandBuilder1 = new Microsoft.Data.SqlClient.SqlCommandBuilder();
             SuspendLayout();
             // 
             // button1
             // 
-            button1.Font = new Font("Arial Rounded MT Bold", 8.861538F);
-            button1.Location = new Point(12, 28);
+            button1.BackColor = Color.Transparent;
+            button1.Font = new Font("Arial Rounded MT Bold", 9.969231F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            button1.Location = new Point(-6, 93);
             button1.Name = "button1";
-            button1.Size = new Size(151, 65);
+            button1.Size = new Size(195, 69);
             button1.TabIndex = 0;
-            button1.Text = "Product Manage ";
-            button1.UseVisualStyleBackColor = true;
+            button1.Text = "Manage Products";
+            button1.UseVisualStyleBackColor = false;
             button1.Click += button1_Click;
             // 
             // button2
             // 
-            button2.Font = new Font("Arial Rounded MT Bold", 8.861538F);
-            button2.Location = new Point(12, 109);
+            button2.BackColor = Color.Transparent;
+            button2.Font = new Font("Arial Rounded MT Bold", 9.969231F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            button2.Location = new Point(-6, 178);
             button2.Name = "button2";
-            button2.Size = new Size(151, 65);
+            button2.Size = new Size(195, 69);
             button2.TabIndex = 1;
             button2.Text = "Sales / Billing";
-            button2.UseVisualStyleBackColor = true;
+            button2.UseVisualStyleBackColor = false;
             button2.Click += button2_Click;
             // 
             // button3
             // 
-            button3.Font = new Font("Arial Rounded MT Bold", 8.861538F);
-            button3.Location = new Point(12, 191);
+            button3.BackColor = Color.Transparent;
+            button3.Font = new Font("Arial Rounded MT Bold", 9.969231F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            button3.Location = new Point(-6, 263);
             button3.Name = "button3";
-            button3.Size = new Size(151, 65);
+            button3.Size = new Size(195, 69);
             button3.TabIndex = 2;
             button3.Text = "Sales History ";
-            button3.UseVisualStyleBackColor = true;
+            button3.UseVisualStyleBackColor = false;
             button3.Click += button3_Click;
             // 
             // button4
             // 
-            button4.Font = new Font("Arial Rounded MT Bold", 8.861538F);
-            button4.ImageAlign = ContentAlignment.MiddleRight;
-            button4.Location = new Point(22, 657);
+            button4.BackColor = Color.Transparent;
+            button4.BackgroundImage = Properties.Resources._3;
+            button4.FlatStyle = FlatStyle.Popup;
+            button4.Font = new Font("Segoe UI", 8.861538F, FontStyle.Bold);
+            button4.ForeColor = SystemColors.Control;
+            button4.Location = new Point(22, 606);
             button4.Name = "button4";
-            button4.Size = new Size(116, 47);
+            button4.Size = new Size(139, 33);
             button4.TabIndex = 3;
             button4.Text = "LOGOUT";
-            button4.UseVisualStyleBackColor = true;
+            button4.UseVisualStyleBackColor = false;
             button4.Click += button4_Click;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI Semibold", 13.8461533F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
-            label1.ForeColor = SystemColors.ControlText;
-            label1.Location = new Point(210, 9);
-            label1.Name = "label1";
-            label1.Size = new Size(598, 105);
-            label1.TabIndex = 4;
-            label1.Text = "Welcome to ECO Grocery Mart POS System\r\nWe’re happy to serve you!\r\nManage your sales, inventory, and billing with ease.\r\n";
-            label1.Click += label1_Click;
             // 
             // panel1
             // 
-            panel1.Location = new Point(184, 12);
+            panel1.AutoSize = true;
+            panel1.BackColor = SystemColors.ButtonHighlight;
+            panel1.BackgroundImage = (Image)resources.GetObject("panel1.BackgroundImage");
+            panel1.BackgroundImageLayout = ImageLayout.Stretch;
+            panel1.Cursor = Cursors.IBeam;
+            panel1.Font = new Font("Segoe UI", 8.861538F, FontStyle.Bold);
+            panel1.ForeColor = SystemColors.ControlText;
+            panel1.Location = new Point(188, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(1000, 700);
+            panel1.Size = new Size(944, 700);
             panel1.TabIndex = 5;
             panel1.Paint += panel1_Paint;
             // 
@@ -105,14 +107,16 @@
             // 
             AutoScaleDimensions = new SizeF(9F, 21F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = SystemColors.ButtonHighlight;
-            ClientSize = new Size(1282, 751);
+            AutoSize = true;
+            BackColor = SystemColors.ActiveCaption;
+            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
+            ClientSize = new Size(1120, 651);
             Controls.Add(panel1);
-            Controls.Add(label1);
             Controls.Add(button4);
             Controls.Add(button3);
             Controls.Add(button2);
             Controls.Add(button1);
+            ForeColor = SystemColors.ControlText;
             Name = "Dashboard";
             Text = "Dashboard";
             Load += Dashboard_Load;
@@ -126,7 +130,7 @@
         private Button button2;
         private Button button3;
         private Button button4;
-        private Label label1;
         private Panel panel1;
+        private Microsoft.Data.SqlClient.SqlCommandBuilder sqlCommandBuilder1;
     }
 }
