@@ -39,8 +39,9 @@
             // 
             // button1
             // 
-            button1.BackColor = Color.Transparent;
+            button1.BackColor = Color.GreenYellow;
             button1.Font = new Font("Arial Rounded MT Bold", 9.969231F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            button1.ForeColor = SystemColors.ControlText;
             button1.Location = new Point(-6, 93);
             button1.Name = "button1";
             button1.Size = new Size(195, 69);
@@ -51,8 +52,9 @@
             // 
             // button2
             // 
-            button2.BackColor = Color.Transparent;
+            button2.BackColor = Color.GreenYellow;
             button2.Font = new Font("Arial Rounded MT Bold", 9.969231F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            button2.ForeColor = SystemColors.ControlText;
             button2.Location = new Point(-6, 178);
             button2.Name = "button2";
             button2.Size = new Size(195, 69);
@@ -63,8 +65,9 @@
             // 
             // button3
             // 
-            button3.BackColor = Color.Transparent;
+            button3.BackColor = Color.GreenYellow;
             button3.Font = new Font("Arial Rounded MT Bold", 9.969231F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            button3.ForeColor = SystemColors.ControlText;
             button3.Location = new Point(-6, 263);
             button3.Name = "button3";
             button3.Size = new Size(195, 69);
@@ -94,6 +97,7 @@
             panel1.BackColor = SystemColors.ButtonHighlight;
             panel1.BackgroundImage = (Image)resources.GetObject("panel1.BackgroundImage");
             panel1.BackgroundImageLayout = ImageLayout.Stretch;
+            panel1.BorderStyle = BorderStyle.FixedSingle;
             panel1.Cursor = Cursors.IBeam;
             panel1.Font = new Font("Segoe UI", 8.861538F, FontStyle.Bold);
             panel1.ForeColor = SystemColors.ControlText;
@@ -117,6 +121,7 @@
             Controls.Add(button2);
             Controls.Add(button1);
             ForeColor = SystemColors.ControlText;
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             Name = "Dashboard";
             Text = "Dashboard";
             Load += Dashboard_Load;
