@@ -59,17 +59,17 @@ Replace YOUR_SERVER with your actual SQL Server name (e.g., DESKTOP-XYZ\\SQLEXPR
 Press F5 or click Start in Visual Studio.
 The form will load, allowing you to select products, enter quantities, and manage sales.
 
-📌 Future Improvements
+## 📌 Future Improvements
 Invoice saving and printing PDF/Bill
 Sales history reporting
 Admin login and authentication
 Product stock tracking
 
-👨‍💻 Author
+## 👨‍💻 Author
 Developed by DulanjanaS
 GitHub: https://github.com/Dulanjana-S
 
-📄 License
+## 📄 License
 MIT License © 2025
 Feel free to use and modify this project for learning or internal use.
 
