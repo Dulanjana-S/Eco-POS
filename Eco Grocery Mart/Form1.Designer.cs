@@ -42,6 +42,7 @@
             textBox1.Name = "textBox1";
             textBox1.Size = new Size(186, 29);
             textBox1.TabIndex = 4;
+            textBox1.TextAlign = HorizontalAlignment.Center;
             textBox1.TextChanged += textBox1_TextChanged;
             // 
             // textBox2
@@ -52,6 +53,7 @@
             textBox2.Name = "textBox2";
             textBox2.Size = new Size(186, 29);
             textBox2.TabIndex = 5;
+            textBox2.TextAlign = HorizontalAlignment.Center;
             // 
             // button1
             // 
@@ -77,7 +79,6 @@
             Controls.Add(button1);
             Controls.Add(textBox2);
             Controls.Add(textBox1);
-            Cursor = Cursors.Default;
             FormBorderStyle = FormBorderStyle.FixedSingle;
             Name = "Login";
             Text = "Login";

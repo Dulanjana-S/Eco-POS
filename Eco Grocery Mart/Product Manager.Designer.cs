@@ -217,13 +217,13 @@
             dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
             dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
-            dataGridView1.Location = new Point(31, 307);
+            dataGridView1.Location = new Point(167, 314);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 56;
             dataGridView1.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             dataGridView1.RowTemplate.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridView1.RowTemplate.DefaultCellStyle.SelectionForeColor = Color.White;
-            dataGridView1.Size = new Size(867, 284);
+            dataGridView1.Size = new Size(599, 284);
             dataGridView1.TabIndex = 19;
             dataGridView1.CellContentClick += dataGridView1_CellContentClick;
             // 
