@@ -28,12 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Dashboard));
             button1 = new Button();
             button2 = new Button();
             button3 = new Button();
             button4 = new Button();
             label1 = new Label();
+            panel1 = new Panel();
             SuspendLayout();
             // 
             // button1
@@ -72,14 +72,12 @@
             // button4
             // 
             button4.Font = new Font("Arial Rounded MT Bold", 8.861538F);
-            button4.Image = (Image)resources.GetObject("button4.Image");
             button4.ImageAlign = ContentAlignment.MiddleRight;
-            button4.Location = new Point(12, 391);
+            button4.Location = new Point(22, 657);
             button4.Name = "button4";
             button4.Size = new Size(116, 47);
             button4.TabIndex = 3;
             button4.Text = "LOGOUT";
-            button4.TextAlign = ContentAlignment.MiddleLeft;
             button4.UseVisualStyleBackColor = true;
             button4.Click += button4_Click;
             // 
@@ -88,20 +86,28 @@
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI Semibold", 13.8461533F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
             label1.ForeColor = SystemColors.ControlText;
-            label1.Location = new Point(210, 28);
+            label1.Location = new Point(210, 9);
             label1.Name = "label1";
             label1.Size = new Size(598, 105);
             label1.TabIndex = 4;
             label1.Text = "Welcome to ECO Grocery Mart POS System\r\nWe’re happy to serve you!\r\nManage your sales, inventory, and billing with ease.\r\n";
             label1.Click += label1_Click;
             // 
+            // panel1
+            // 
+            panel1.Location = new Point(184, 12);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(1000, 700);
+            panel1.TabIndex = 5;
+            panel1.Paint += panel1_Paint;
+            // 
             // Dashboard
             // 
             AutoScaleDimensions = new SizeF(9F, 21F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ButtonHighlight;
-            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
-            ClientSize = new Size(820, 479);
+            ClientSize = new Size(1282, 751);
+            Controls.Add(panel1);
             Controls.Add(label1);
             Controls.Add(button4);
             Controls.Add(button3);
@@ -121,5 +127,6 @@
         private Button button3;
         private Button button4;
         private Label label1;
+        private Panel panel1;
     }
 }

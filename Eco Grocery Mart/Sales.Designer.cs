@@ -17,7 +17,7 @@
 
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             label1 = new Label();
             label2 = new Label();
             label3 = new Label();
@@ -158,8 +158,8 @@
             // 
             // dataGridView1
             // 
-            dataGridViewCellStyle2.Font = new Font("Arial Rounded MT Bold", 8.86F);
-            dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Font = new Font("Arial Rounded MT Bold", 8.86F);
+            dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             dataGridView1.BackgroundColor = SystemColors.Window;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Columns.AddRange(new DataGridViewColumn[] { ProductID, ProductName, Price, Quantity, Total });
@@ -259,7 +259,7 @@
             // 
             AutoScaleDimensions = new SizeF(9F, 21F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(783, 613);
+            ClientSize = new Size(982, 651);
             Controls.Add(button5);
             Controls.Add(button4);
             Controls.Add(label7);

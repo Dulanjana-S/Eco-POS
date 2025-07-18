@@ -14,15 +14,58 @@ namespace Eco_Grocery_Mart
     {
         public Dashboard()
         {
-            InitializeComponent(); //very important
+            InitializeComponent();
 
-            // Standard design settings
-            this.Size = new Size(1200, 800);
-            this.StartPosition = FormStartPosition.CenterScreen;
-            this.FormBorderStyle = FormBorderStyle.Sizable; // Allow resize
-            this.MaximizeBox = true;
+            //  settings
+          //  this.Size = new Size(1200, 800);
+         //   this.StartPosition = FormStartPosition.CenterScreen;
+          //  this.FormBorderStyle = FormBorderStyle.Sizable; // Allow resize
+          //  this.MaximizeBox = true;
 
+
+            button1.Click += button1_Click;
+            button2.Click += button2_Click;
+            button3.Click += button3_Click;
         }
+
+        private void OpenFormInPanel(Form form)
+        {
+            panel1.Controls.Clear();
+            form.TopLevel = false;
+            form.FormBorderStyle = FormBorderStyle.None;
+            form.Dock = DockStyle.Fill;
+            panel1.Controls.Add(form);
+            form.Show();
+        }
+
+        /*    //BUTTONS TO PANEl 
+            private void button1_Click(object sender, EventArgs e)
+            {
+                panel1.Controls.Clear();
+                Product_Manager pmControl = new Product_Manager();
+                pmControl.Dock = DockStyle.Fill;
+                panel1.Controls.Add(pmControl);
+
+            }
+
+            private void button2_Click(object sender, EventArgs e)
+            {
+                panel1.Controls.Clear();
+                Sales sbControl = new Sales();
+                sbControl.Dock = DockStyle.Fill;
+                panel1.Controls.Add(sbControl);
+            }
+
+            private void button3_Click(object sender, EventArgs e)
+            {
+                panel1.Controls.Clear();
+                SalesHistory shControl = new SalesHistory();
+                shControl.Dock = DockStyle.Fill;
+               panel1.Controls.Add(shControl);
+
+            }*/
+
+
         /* public MainForm(string username, string role)
         {
             InitializeComponent();
@@ -44,7 +87,7 @@ namespace Eco_Grocery_Mart
 
             // Show the Login form again
             Login loginForm = new Login();
-            loginForm.Show();  
+            loginForm.Show();
         }
 
         private void Dashboard_Load(object sender, EventArgs e)
@@ -57,23 +100,48 @@ namespace Eco_Grocery_Mart
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        // can add new window in  forms
+      /*  private void btnbutton1_Click(object sender, EventArgs e)
         {
             Product_Manager products = new Product_Manager();
-             products.Show();
-           
+            products.Show();
+
+        }
+
+        private void btnbutton2_Click(object sender, EventArgs e)
+        {
+            Sales products = new Sales();
+            products.Show();
+        }
+
+        private void btnbutton3_Click(object sender, EventArgs e)
+        {
+            SalesHistory history = new SalesHistory();
+            history.Show();
+        }
+      */
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            OpenFormInPanel(new Product_Manager());
+
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-           Sales products = new Sales();
-            products.Show();
+            OpenFormInPanel(new Sales());
+
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            SalesHistory history = new SalesHistory();
-            history.Show();
+            OpenFormInPanel(new SalesHistory());
+
         }
     }
 }
