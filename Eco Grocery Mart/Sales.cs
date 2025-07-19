@@ -172,10 +172,10 @@ namespace Eco_Grocery_Mart
         }
 
         private void button2_Click(object sender, EventArgs e)
-        {
+   {
             try
             {
-                // Calculate Total Amount
+                // Calculate totalAmount
                 decimal totalAmount = 0;
                 foreach (DataGridViewRow row in dataGridView1.Rows)
                 {
@@ -187,17 +187,18 @@ namespace Eco_Grocery_Mart
 
                 int saleID;
 
-                // Insert into Sales table
+                // ✅ OPEN CONNECTION HERE so it's available inside the loop
                 using (SqlConnection con = new SqlConnection(connectionString))
                 {
                     con.Open();
 
+                    // Insert into Sales table
                     string insertSale = "INSERT INTO Sales (TotalAmount) OUTPUT INSERTED.SaleID VALUES (@total)";
                     SqlCommand cmd = new SqlCommand(insertSale, con);
                     cmd.Parameters.AddWithValue("@total", totalAmount);
-                    saleID = (int)cmd.ExecuteScalar();
+                    saleID = (int)cmd.ExecuteScalar(); // Get newly inserted SaleID
 
-                    // Insert each item into SalesHistory
+                    // Loop through DataGridView and insert into SalesHistory
                     foreach (DataGridViewRow row in dataGridView1.Rows)
                     {
                         if (row.IsNewRow) continue;
@@ -205,14 +206,16 @@ namespace Eco_Grocery_Mart
                         int productId = Convert.ToInt32(row.Cells["ProductID"].Value);
                         decimal price = Convert.ToDecimal(row.Cells["Price"].Value);
                         int qty = Convert.ToInt32(row.Cells["Quantity"].Value);
+                        decimal total = price * qty;
 
                         SqlCommand detailCmd = new SqlCommand(
-                            "INSERT INTO SalesHistory (SaleID, ProductID, Quantity, Price) VALUES (@saleID, @productID, @qty, @price)", con);
+                            "INSERT INTO SalesHistory (SaleID, ProductID, Quantity, Price, Total) VALUES (@saleID, @productID, @qty, @price, @total)", con);
 
                         detailCmd.Parameters.AddWithValue("@saleID", saleID);
                         detailCmd.Parameters.AddWithValue("@productID", productId);
                         detailCmd.Parameters.AddWithValue("@qty", qty);
                         detailCmd.Parameters.AddWithValue("@price", price);
+                        detailCmd.Parameters.AddWithValue("@total", total);
 
                         detailCmd.ExecuteNonQuery();
                     }
@@ -220,13 +223,13 @@ namespace Eco_Grocery_Mart
                     con.Close();
                 }
 
-                // Open Invoice Form
+                // Show invoice
                 Invoice invoiceForm = new Invoice(saleID, totalAmount);
                 invoiceForm.Show();
 
                 MessageBox.Show("Sale completed and invoice generated!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                // Optional: Clear cart and total
+                // Clear cart and total
                 dataGridView1.Rows.Clear();
                 textBox3.Text = "0.00";
             }

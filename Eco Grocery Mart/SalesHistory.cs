@@ -35,7 +35,7 @@ namespace Eco_Grocery_Mart
             PM.Name AS ProductName,
             SH.Quantity,
             SH.Price,
-            SH.Total
+            SH.Total 
         FROM 
             Sales S
         INNER JOIN 
@@ -107,7 +107,9 @@ namespace Eco_Grocery_Mart
         private void SalesHistory_Load(object sender, EventArgs e)
         {
             LoadSalesHistory();
+            
             LoadFilteredSalesHistory(DateTime.MinValue, DateTime.MaxValue);
+           
 
         }
 

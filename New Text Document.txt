@@ -1,0 +1,32 @@
+Project name - Eco-POS
+
+Description -  A simple, offline Point of Sale (POS) system for small grocery stores to manage sales transactions efficiently.
+
+💡 Features / Key Functionality:
+🛒 Product selection via 
+🔢 Quantity entry and price display
+➕ Add-to-cart functionality
+🧾 Real-time cart view 
+💰 Total calculation
+💽 Database integration (SQL Server)
+🔐 Local desktop application (no internet required)
+Add Product, Generate Invoice, Sales History and more.
+
+⚙️ Technology Stack:
+Technology Stack: C# Windows Forms (.NET Framework), SQL Server, ADO.NET
+
+🧪 Installation / Setup Instructions:
+Steps to install and run the project (e.g., prerequisites, how to clone/run it locally)
+
+🧑‍💻 Usage Instructions:
+How to use the application (basic instructions or demo info/screenshots if any)
+
+🧾 License & Contribution:
+License (MIT, GPL, or other?)
+
+Contribution guidelines (Can others contribute? Any rules?)
+
+📸 (Optional):
+Screenshots (If you have any, you can upload them here, or tell me what pages you want screenshots for)
+
+GitHub repo URL (So I can add badges and links if needed)
