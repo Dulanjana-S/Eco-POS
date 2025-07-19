@@ -187,7 +187,7 @@ namespace Eco_Grocery_Mart
 
                 int saleID;
 
-                // ✅ OPEN CONNECTION HERE so it's available inside the loop
+                // CONNECTION 
                 using (SqlConnection con = new SqlConnection(connectionString))
                 {
                     con.Open();
