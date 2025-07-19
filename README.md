@@ -76,7 +76,7 @@ Replace `YOUR_SERVER` with your actual SQL Server name
 <img width="782" height="690" alt="4" src="https://github.com/user-attachments/assets/4389bc2b-229b-4372-855c-4ce0feeb2361" />
 
 ## Invoice
-<img width="498" height="632" alt="5" src="https://github.com/user-attachments/assets/05a38115-b6b5-49b0-ba70-45be1ac510dd" />
+<img width="500" height="634" alt="5" src="https://github.com/user-attachments/assets/00a72020-9ab2-4d80-9332-a50ac9053335" />
 
 ## SalesHistory
 <img width="782" height="690" alt="6" src="https://github.com/user-attachments/assets/e47dcba7-2ab1-4a91-a67a-b08de6c4dc99" />
