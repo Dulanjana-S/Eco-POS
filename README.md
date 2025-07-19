@@ -1,6 +1,6 @@
-# 🛒 Eco-POS - Store POS System
+# 🛒 Eco-POS - small Retail shops POS System
 
-**Offline Point of Sale (POS) system designed specifically for small grocery stores to manage sales transactions efficiently and locally**
+**Offline Point of Sale (POS) system designed specifically for small Retail shops to manage sales transactions efficiently and locally**
 
 ## 💡 Features
 
