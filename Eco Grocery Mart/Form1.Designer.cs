@@ -37,10 +37,11 @@
             // textBox1
             // 
             textBox1.BackColor = Color.White;
+            textBox1.Font = new Font("Arial Rounded MT Bold", 9.969231F, FontStyle.Regular, GraphicsUnit.Point, 0);
             textBox1.ForeColor = SystemColors.WindowText;
             textBox1.Location = new Point(107, 334);
             textBox1.Name = "textBox1";
-            textBox1.Size = new Size(186, 29);
+            textBox1.Size = new Size(186, 28);
             textBox1.TabIndex = 4;
             textBox1.TextAlign = HorizontalAlignment.Center;
             textBox1.TextChanged += textBox1_TextChanged;
@@ -48,10 +49,11 @@
             // textBox2
             // 
             textBox2.BackColor = Color.White;
+            textBox2.Font = new Font("Arial Rounded MT Bold", 9.969231F);
             textBox2.ForeColor = SystemColors.WindowText;
             textBox2.Location = new Point(107, 439);
             textBox2.Name = "textBox2";
-            textBox2.Size = new Size(186, 29);
+            textBox2.Size = new Size(186, 28);
             textBox2.TabIndex = 5;
             textBox2.TextAlign = HorizontalAlignment.Center;
             // 
